@@ -1,0 +1,123 @@
+\documentclass[landscape]{setlist}
+
+\usepackage[%
+    colorlinks=true,
+    pdfstartview=FitV,
+    linkcolor=blue,
+    citecolor=green,
+    urlcolor=red,
+    %debug=true,
+    hyperfigures=true%
+    ]{hyperref}
+
+\begin{document}
+
+\date{\textbf{Erstellt am:} 10. Februar 2014 \\ \textbf{\"{U}berarbeitet am:} \today}
+
+\maketitle \clearpage
+
+\tableofcontents \clearpage
+
+% landscape
+\songcolumns{2}
+\columnsep=3mm
+
+\renewcommand{\snumbgcolor}{songnr}
+\renewcommand{\notebgcolor}{notes}
+\renewcommand\printchord[1]{\footnotesize\sffamily\textit{\textcolor{linkcolor}{{#1}}}}
+
+% BEGINN
+
+%    \songsection{Entries sort by Title}
+%    \vspace*{5mm}
+%        \begin{center}
+%            \begin{longtable}{|*{4}{l|}}  \hline
+%                \textbf{Title}  &   \textbf{Artist} &   \textbf{Comment}    &   \textbf{Page}   \\  \hline \endhead
+%                \input{table_title}
+%            \end{longtable}
+%        \end{center}
+%
+%    \clearpage
+%    \songsection{Entries sort by Artist}
+%    \vspace*{5mm}
+%        \begin{center}
+%            \begin{longtable}{|*{4}{l|}}  \hline
+%                \textbf{Artist} &   \textbf{Title}  &   \textbf{Comment}    &   \textbf{Page}   \\  \hline \endhead
+%                \input{table_artist}
+%            \end{longtable}
+%        \end{center}
+
+    \clearpage
+    \songsection{A Capella}
+        \begin{songs}{}
+            \input{input/walkdownthatlonesomeroad}          \sclearpage     % #1
+            \input{input/madworld}                          %\sclearpage     % #2
+        \end{songs}
+
+    \clearpage
+    \songsection{Classic}
+        \begin{songs}{}
+            \input{input/derleiermann.tex}                  %\sclearpage     % #1
+        \end{songs}
+
+    \clearpage
+    \songsection{Folk and Medieval}
+        \begin{songs}{}
+            \input{input/dasbierichinderrechtentrug}        \sclearpage     % #1
+            \input{input/derwandersmann}                    \sclearpage     % #2
+            \input{input/dunklestunde}                      \sclearpage     % #3
+            \input{input/geisterschiff}                     \sclearpage     % #4
+            \input{input/icourtedaweegirl.tex}              \sclearpage     % #5
+            \input{input/i_see_fire}                        \sclearpage     % #6
+            \input{input/mordaufdemabort}                   \sclearpage     % #7
+            \input{input/stepitoutmary}                     \sclearpage     % #8
+            \input{input/thebardssong}                      \sclearpage     % #9
+            \input{input/thebonnyshipthediamond}            \sclearpage     % #10
+            \input{input/thedragonborncomes}                \sclearpage     % #11
+            \input{input/therattlinbog}                     \sclearpage     % #12
+            \input{input/thewildrover}                      \sclearpage     % #13
+            \input{input/willstdu}                          \sclearpage     % #14
+            \input{input/yejackobites}                      %\sclearpage     % #15
+        \end{songs}
+
+    \clearpage
+    \songsection{Fun}
+        \begin{songs}{}
+            \input{input/dragonball}                        \sclearpage     % #1
+            \input{input/fassbierpaladosen}                 \sclearpage     % #2
+            \input{input/hesapirate}                        \sclearpage     % #3
+            \input{input/trigardon}                         \sclearpage     % #4
+            \input{input/untotaufurlaub}                    %\sclearpage     % #5
+        \end{songs}{}
+
+    \clearpage
+    \songsection{Modern}{}
+        \begin{songs}{}
+            \input{input/rollinginthedeep.tex}              \sclearpage     % #1
+            \input{input/timshel}                           %\sclearpage     % #2
+        \end{songs}
+
+    \clearpage
+    \songsection{Oldies}
+        \begin{songs}{}
+            \input{input/and_so_it_goes}                    \sclearpage     % #1
+            \input{input/backinthehighlife}                 \sclearpage     % #2
+            \input{input/blackbird}                         \sclearpage     % #3
+            \input{input/dimming_of_the_day}                \sclearpage     % #4
+            \input{input/fragile}                           \sclearpage     % #5
+            \input{input/havent_we_lost_enough}             \sclearpage     % #6
+            \input{input/helplesslyhoping}                  \sclearpage     % #7
+            \input{input/itdoesntmatter}                    \sclearpage     % #8
+            \input{input/lives_in_the_balance}              \sclearpage     % #9
+            \input{input/upwherewebelong}                   \sclearpage     % #10
+            \input{input/sailingtophiladelphia}             \sclearpage     % #11
+            \input{input/teach_your_children}               \sclearpage     % #12
+            \input{input/thegreenfieldsoffrance}            %\sclearpage     % #13
+        \end{songs}
+
+    \clearpage
+    \songsection{Other}
+        \begin{songs}{}
+            \input{input/kaperfahrt}                        %\sclearpage     % #1
+        \end{songs}
+\end{document}
