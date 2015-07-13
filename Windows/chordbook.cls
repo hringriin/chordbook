@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{setlist}
+\ProvidesClass{chordbook}
 \LoadClass[12pt,a4paper,titlepage]{scrartcl}
 
 \newcommand\myauthor{JoSh}
