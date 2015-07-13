@@ -3,7 +3,7 @@
 
 movepdf = yes
 
-FILENAME=Setlist
+FILENAME=Chordbook
 
 all: document clean
 
