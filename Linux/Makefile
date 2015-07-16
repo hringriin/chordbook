@@ -3,7 +3,7 @@
 
 movepdf = yes
 
-FILENAME=Chordbook
+FILENAME=../TeX/Chordbook
 
 all: document clean
 
