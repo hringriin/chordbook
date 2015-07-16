@@ -8,7 +8,9 @@ This is a collection of texts and chords of various artists, formed to a *Chordb
 
 You need `LaTeXe2` installed, this can be achieved e.g. by installing the `texlive` Package under Linux or `MiKTeX` under Windows.
 
-Windows might be a douche about the [`songs`][songspkg] -Package; you propably will have to install it on your own or put the songs.sty into the `Chordbook/Windows` folder.
+Windows might be a douche about the [`songs`][songspkg] -Package; ~~you propably will have to install it on your own or put the songs.sty into the `Chordbook/Windows` folder.~~ I put the file `songs.sty` in the Windows folder, so you won't have any trouble compiling it because of a missing style.
+
+It can be downloaded [here][songspkg] as soon as I can provide a link to the style.
 
 ### Windows
 
