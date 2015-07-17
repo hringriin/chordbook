@@ -18,6 +18,10 @@ To compile the code it should be sufficient to run the `COMPILE.bat` ***AFTER CO
 
 The Batch file expects PERL to be installed but it isn't necessary, because there are no references and no glossary entries made, yet.
 
+#### The Batch file
+
+The first line of the Batch files contains a Command to add the Perl interpreter to your PATH variables - check your Perl installation and adjust the path to your needs
+
 ### Linux
 
 To compile simply type `make` after a directory change into `Chordbook/Linux`
