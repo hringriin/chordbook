@@ -1,16 +1,13 @@
-# Hier den Namen der Tex Datei eintragen,
-# aber OHNE DIE ENDUNG .tex !!!!
-
 movepdf = yes
 
-FILENAME=../TeX/Chordbook
+FILENAME=../TeX/Chordbook/Chordbook
 
 all: document clean
 
 clean:
-	@echo "+--------------------------------------+";
-	@echo "|  Loesche ueberfluessige Dateien ...  |";
-	@echo "+--------------------------------------+";
+	@echo "+-------------------------------------------+";
+	@echo "|  Deleting temporary files - cleaning up!  |";
+	@echo "+-------------------------------------------+";
 	rm -f *.aux;
 	rm -f *.bbl;
 	rm -f *.blg;
@@ -25,15 +22,31 @@ clean:
 	rm -f *.out;
 
 rmpdf:
-	@echo "+-------------------+";
-	@echo "|  Loesche die PDF  |";
-	@echo "+-------------------+";
+	@echo "+----------------+";
+	@echo "|  Deleting PDF  |";
+	@echo "+----------------+";
 	rm -f $(FILENAME).pdf;
 
 document:
-	@echo "+------------------------------------------------------+";
-	@echo "|  Kompiliere das Dokument. Das kann jetzt dauern ...  |";
-	@echo "+------------------------------------------------------+";
+	@clear
+	@echo "+-----------------------------------------------------+";
+	@echo "|  Compiling 'Chordbook' .. This may take a while ..  |";
+	@echo "+-----------------------------------------------------+";
+	@sleep 1
+	@echo " ... 3"
+	@sleep 1
+	@clear
+	@echo "+-----------------------------------------------------+";
+	@echo "|  Compiling 'Chordbook' .. This may take a while ..  |";
+	@echo "+-----------------------------------------------------+";
+	@echo " ... 2"
+	@sleep 1
+	@clear
+	@echo "+-----------------------------------------------------+";
+	@echo "|  Compiling 'Chordbook' .. This may take a while ..  |";
+	@echo "+-----------------------------------------------------+";
+	@echo " ... 1"
+	@sleep 1
 	pdflatex $(FILENAME).tex;
 	@if(grep "citation" $(FILENAME).aux > /dev/null); \
 		then \
@@ -55,15 +68,3 @@ document:
 	fi;
 	pdflatex $(FILENAME).tex;
 	pdflatex $(FILENAME).tex;
-
-#cppdf:
-#	@echo "\n\n\n\n+------------------------------------------------+";
-#	@echo "|  Nur, wenn Du die PDF auch committen willst!;  |";
-#	@echo "|  Antworte mit [y]es oder [n]o!                 |";
-#	@echo "+------------------------------------------------+\n\n";
-#	@if !(test -d ./build); \
-#		then mkdir ./build \
-#		&& echo "\nBuild directory created."; \
-#		else echo "\nBuild directory exists. Nothing changed."; \
-#	fi;
-#	@cp -vi $(FILENAME).pdf ./build/

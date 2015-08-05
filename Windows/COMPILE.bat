@@ -1,19 +1,19 @@
 path = %PATH%;C:\Strawberry\perl\bin\
 
-"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook.tex"
+"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook/Chordbook.tex"
 
-"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\bibtex.exe" "../TeX/Chordbook"
-"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook.tex"
+"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\bibtex.exe" "../TeX/Chordbook/Chordbook"
+"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook/Chordbook.tex"
 
-"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\makeglossaries.exe" "../TeX/Chordbook"
-"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook.tex"
-"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\makeglossaries.exe" "../TeX/Chordbook"
+"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\makeglossaries.exe" "../TeX/Chordbook/Chordbook"
+"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook/Chordbook.tex"
+"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\makeglossaries.exe" "../TeX/Chordbook/Chordbook"
 
-"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\bibtex.exe" "../TeX/Chordbook"
-"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook.tex"
+"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\bibtex.exe" "../TeX/Chordbook/Chordbook"
+"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook/Chordbook.tex"
 
-"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook.tex"
-"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook.tex"
+"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook/Chordbook.tex"
+"C:\Program Files\MiKTeX 2.9\miktex\bin\x64\pdflatex.exe" "../TeX/Chordbook/Chordbook.tex"
 
 del "*.acn"
 del "*.acr"
