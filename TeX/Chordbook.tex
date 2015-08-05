@@ -1,5 +1,7 @@
 \documentclass[landscape]{../TeX/chordbook}
 
+\usepackage{pdflscape}
+
 \usepackage[%
     colorlinks=true,
     pdfstartview=FitV,
@@ -115,4 +117,23 @@
         \begin{songs}{}
             \input{../src/kaperfahrt}
         \end{songs}
+
+
+    \begin{appendix}
+        \setlength{\oddsidemargin}{0mm}
+        %\setlength{\hoffset}{-17.4mm}
+        %\setlength{\voffset}{-22.4mm}
+        %\setlength{\topmargin}{0mm}
+        %\setlength{\headheight}{15mm}
+        %\setlength{\headsep}{5mm}
+        \setlength{\textheight}{195mm}
+        %\setlength{\textwidth}{280mm}
+        %\setlength{\headwidth}{\textwidth}
+        \setlength{\marginparsep}{-30mm}
+        \setlength{\marginparwidth}{-30mm}
+        %\setlength{\footskip}{10mm}
+        \begin{landscape}
+            \includegraphics[scale=0.93]{../src/appendix/i_see_fire.pdf}
+        \end{landscape}
+    \end{appendix}
 \end{document}
