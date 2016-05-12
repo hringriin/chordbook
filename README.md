@@ -26,5 +26,16 @@ The first line of the Batch files contains a Command to add the Perl interpreter
 
 To compile simply type `make` after a directory change into `Chordbook/Linux`
 
+#### Linux
+
+You need the latest TexLive environment.
+
+
+#### Mac OS
+
+You need [MacTex-2015][mactex] installed and then activated via `texdistmgr activate TexLive-2015`.
+
+
 [songspkg]: http://songs.sourceforge.net/index.html "Songs Package"
 [mailme]: hringriin@niederhoelle.org "Mail Me"
+[mactex]: https://tug.org/mactex/ "MacTex-2015"
