@@ -22,7 +22,7 @@ The Batch file expects PERL to be installed but it isn't necessary, because ther
 
 The first line of the Batch files contains a Command to add the Perl interpreter to your PATH variables - check your Perl installation and adjust the path to your needs
 
-### Linux
+### Unix (Linux/Mac OS)
 
 To compile simply type `make` after a directory change into `Chordbook/Linux`
 
