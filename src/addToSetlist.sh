@@ -6,7 +6,7 @@
 #               E-Mail (work): jkoester@tzi.de                                  #
 #               E-Mail (priv): koester.joschka@gmail.com                        #
 # Date      :   2014-03-13                                                      #
-# Version   :   v1.0                                                            #
+# Version   :   v1.0-4                                                          #
 # Requires  :   dialog                                                          #
 # Category  :   Shell menu tools                                                #
 #################################################################################
@@ -23,7 +23,7 @@
 #################################################################################
 
 # Variables for title, backtitle and version
-version="v1.0-3"
+version="v1.0-4"
 dialogtitle="Add to Setlist $version"
 backtitle="Linux Shell Script - by hringriin"
 PN=`basename "$0"`
@@ -116,7 +116,7 @@ The Prefix is meant to be the filename without any ending, 'mad_world' for examp
             echo -e "    by={$artist},">>$tex
             echo -e "    index={$index}]\n">>$tex
             echo -e "    \\\phantomsection">>$tex
-            echo -e "    \\\addcontentsline{toc}{subsection}{\\\thesubsection \\\quad $title - $artist}\n">>$tex
+            echo -e "    \\\addcontentsline{toc}{subsection}{\\\thesubsection \\\quad \\\textbf{$title} --- $artist}\n">>$tex
             echo -e "    \\\label{$index}\n">>$tex
             echo -e "    \\\beginverse">>$tex
             echo -e "        Example verse ...">>$tex
