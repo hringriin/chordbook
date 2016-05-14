@@ -30,7 +30,7 @@
 % Header
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhead[OL,ER]{\textbf{\myauthor's Chordbook 2015}\\}
+\fancyhead[OL,ER]{\textbf{\myauthor's Chordbook \the\year}\\}
 \fancyhead[EL,OR]{\textbf{Seite \thepage} \\ \textit{\leftmark}}
 
 \setlength{\oddsidemargin}{0mm}
