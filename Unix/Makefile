@@ -33,20 +33,6 @@ document:
 	@echo "|  Compiling 'Chordbook' .. This may take a while ..  |";
 	@echo "+-----------------------------------------------------+";
 	@sleep 1
-	@echo " ... 3"
-	@sleep 1
-	@clear
-	@echo "+-----------------------------------------------------+";
-	@echo "|  Compiling 'Chordbook' .. This may take a while ..  |";
-	@echo "+-----------------------------------------------------+";
-	@echo " ... 2"
-	@sleep 1
-	@clear
-	@echo "+-----------------------------------------------------+";
-	@echo "|  Compiling 'Chordbook' .. This may take a while ..  |";
-	@echo "+-----------------------------------------------------+";
-	@echo " ... 1"
-	@sleep 1
 	pdflatex $(FILENAME).tex;
 	@if(grep "citation" $(FILENAME).aux > /dev/null); \
 		then \
