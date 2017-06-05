@@ -1,6 +1,7 @@
 movepdf = yes
 
 FILENAME=../TeX/Chordbook/Chordbook
+PDF=Chordbook.pdf
 
 all: document clean
 
@@ -25,7 +26,7 @@ rmpdf:
 	@echo "+----------------+";
 	@echo "|  Deleting PDF  |";
 	@echo "+----------------+";
-	rm -f $(FILENAME).pdf;
+	rm -f $(PDF);
 
 document:
 	@clear
@@ -54,3 +55,6 @@ document:
 	fi;
 	pdflatex $(FILENAME).tex;
 	pdflatex $(FILENAME).tex;
+
+copyPDF:
+	cp -iv ${PDF} ../Chordbook/`date "+%Y-%m-%d_%H:%M:%S"`_$(PDF)
