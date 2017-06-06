@@ -66,10 +66,11 @@ case $response in
     dialog --backtitle "$backtitle" \
         --form "Fill in the form for the name of the Artist, the Title and the Prefix of the song.\n
 The Prefix is meant to be the filename without any ending, 'mad_world' for example." 0 0 0 \
-        "Artist" 2 4 "" 2 20 40 0 \
-        "Title" 4 4 "" 4 20 40 0 \
-        "Index" 6 4 "" 6 20 40 0 \
-        "File prefix" 8 4 "" 8 20 40 0 \
+        "Artist" 2 4 "" 2 20 80 0 \
+        "Title" 4 4 "" 4 20 80 0 \
+        "Index" 6 4 "" 6 20 80 0 \
+        "Copyright" 8 4 "" 8 20 80 0 \
+        "License" 10 4 "" 10 20 80 0 \
         2>$_tmp1
 
     # Iterator
@@ -84,10 +85,12 @@ The Prefix is meant to be the filename without any ending, 'mad_world' for examp
     artist="${area[0]}"
     title="${area[1]}"
     index="${area[2]}"
-    prefix="${area[3]}"
+    copyright="${area[3]}"
+    license="${area[4]}"
 
-    tex="$prefix.tex"
-    file="$prefix.pdf"
+
+    tex="$index.tex"
+    file="$index.pdf"
 
     sh -c "touch $tex"
 
@@ -114,6 +117,8 @@ The Prefix is meant to be the filename without any ending, 'mad_world' for examp
             echo -e "\\\stepcounter{subsection}\n">>$tex
             echo -e "\\\beginsong{$title}[%">>$tex
             echo -e "    by={$artist},">>$tex
+            echo -e "    cr={$copyright},">>$tex
+            echo -e "    li={$license},">>$tex
             echo -e "    index={$index}]\n">>$tex
             echo -e "    \\\phantomsection">>$tex
             echo -e "    \\\addcontentsline{toc}{subsection}{\\\thesubsection \\\quad \\\textbf{$title} --- $artist}\n">>$tex
