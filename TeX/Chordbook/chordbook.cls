@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{chordbook}
-\LoadClass[12pt,a4paper,titlepage]{scrartcl}
+\LoadClass[12pt,a4paper,titlepage,twoside]{scrartcl}
 
 \newcommand\myauthor{JoSh}
 \title{Chordbook}
@@ -34,6 +34,7 @@
 \fancyhead[EL,OR]{\textbf{Seite \thepage} \\ \textit{\leftmark}}
 
 \setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
 \setlength{\hoffset}{-17.4mm}
 \setlength{\voffset}{-22.4mm}
 \setlength{\topmargin}{0mm}
