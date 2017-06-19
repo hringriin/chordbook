@@ -7,7 +7,7 @@ Ich erhebe keinen Anspruch auf Eigentum oder Richtigkeit der Dargestellten Texte
 
 Sollte es Einwände gegen ein oder mehrere Lieder oder Texte geben, bin ich über meine E-Mail Adresse `hringriin@gmail.com` erreichbar.
 
-Dank **Fagus vom Friedriechshain** konnte ich mein Chordbook um einige Stücke erweitern.
+Dank **Fagus vom Friedrichshain** konnte ich mein Chordbook um einige Stücke erweitern.
 Seine Beiträge sind gekennzeichnet oder werden noch gekennzeichnet werden.
 
 
