@@ -6,6 +6,9 @@
 \title{Chordbook}
 \author{``\myauthor''}
 
+% For smileys
+\RequirePackage{MnSymbol,wasysym}
+
 \RequirePackage{xcolor}
 \definecolor{linkcolor}{HTML}{0055AA}
 \definecolor{citecolor}{HTML}{33BB00}
