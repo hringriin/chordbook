@@ -28,6 +28,11 @@ rmpdf:
 	@echo "+----------------+";
 	rm -f $(PDF);
 
+# for server deploy
+server: document clean
+	cp -rf $(PDF) /var/www/archive.chordbook/LATEST_$(PDF)
+	cp -rf $(PDF) /var/www/archive.chordbook/`date "+%Y-%m-%d_%H:%M:%S"`_$(PDF)
+
 document:
 	@clear
 	@echo "+-----------------------------------------------------+";
@@ -57,4 +62,4 @@ document:
 	pdflatex $(FILENAME).tex;
 
 copyPDF:
-	cp -iv ${PDF} ../Chordbook/`date "+%Y-%m-%d_%H:%M:%S"`_$(PDF)
+	cp -iv $(PDF) ../Chordbook/`date "+%Y-%m-%d_%H:%M:%S"`_$(PDF)
