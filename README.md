@@ -1,5 +1,9 @@
 # Chordbook
 
+## ATTENTION PLEASE
+
+**The support for compiling this on windows via one of the scripts / makefiles in this repository is temporarily discontinued.**
+
 ## About this Repository in my native language
 
 Dieses *Chordbook* stellt eine persönliche und vielfältige Sammlung von Liedgut dar, die ich über die Jahre gesammelt habe.
