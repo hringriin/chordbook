@@ -28,6 +28,9 @@ rmpdf:
 	@echo "+----------------+";
 	rm -f $(PDF);
 
+lilypond:
+	$(MAKE) -C ../LilyPond/
+
 # for server deploy
 server: document clean
 	cp -rf $(PDF) /var/www/archive.chordbook/LATEST_$(PDF)
