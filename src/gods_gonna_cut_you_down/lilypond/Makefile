@@ -13,3 +13,11 @@ movePDF:
 
 moveMIDI:
 	@if [ -e *.midi ] ; then if [ ! -d MIDI ] ; then mkdir MIDI ; fi ; mv *.midi MIDI/ ; fi
+
+purgeALL: purgePDF purgeMIDI
+
+purgePDF:
+	rm -rf PDF
+
+purgeMIDI:
+	rm -rf MIDI
