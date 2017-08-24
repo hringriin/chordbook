@@ -1,8 +1,8 @@
-# Chordbook
-
-## ATTENTION PLEASE
+# ATTENTION PLEASE
 
 **The support for compiling this on windows via one of the scripts / makefiles in this repository is temporarily discontinued.**
+
+# Chordbook
 
 ## About this Repository in my native language
 
