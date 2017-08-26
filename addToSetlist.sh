@@ -167,6 +167,7 @@ function checkLegacy()
 function main()
 {
     checkLegacy
+    cleanup
 }
 
 function addSong()
@@ -210,16 +211,6 @@ function addSong()
             license="${area[4]}"
             arranger="${area[5]}"
 
-            echo "array ..."
-            echo "artist: ${area[0]} ${artist}"
-            echo "title: ${area[1]} ${title}"
-            echo "filename: ${area[2]} ${filename}"
-            echo "copyright: ${area[3]} ${copyright}"
-            echo "license: ${area[4]} ${license}"
-            echo "arranger: ${area[5]} ${arranger}"
-            echo "... FINISHED"
-            sleep 10
-
             srcPath="src"
             templatePath="LilyPond"
             latexTemplate="template.tex"
@@ -262,6 +253,7 @@ function addSong()
             sed 's/<ARRANGER>/'${arranger}'/g' ${lilypondFile} > $_tmp4
             cp $_tmp4 ${lilypondFile}
 
+            dialog --msgbox "Script has finished. There should be a new song in 'src/' named '${title}' in 'src/${filename}', have fun!" 0 0 ;
 
             ;;
         1)
@@ -273,8 +265,44 @@ function addSong()
 
 function cleanup()
 {
+    rm $_tmp1
+    rm $_tmp2
     rm $_tmp3
     rm $_tmp4
+
+    unset version
+    unset dialogtitle
+    unset backtitle
+    unset PN
+    unset file
+    unset _tmp1
+    unset _tmp2
+    unset _tmp3
+    unset _tmp4
+    unset DVER
+    unset esc
+    unset response
+    unset i
+    unset area
+    unset artist
+    unset title
+    unset index
+    unset copyright
+    unset license
+    unset arranger
+    unset tex
+    unset file
+    unset line
+    unset e
+    unset srcPath
+    unset templatePath
+    unset latexTemplate
+    unset lilypondTemplate
+    unset latexPath
+    unset lilypondPath
+    unset texFile
+    unset lilypondFile
+
 }
 
 main
