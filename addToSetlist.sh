@@ -167,8 +167,6 @@ function checkLegacy()
 function main()
 {
     checkLegacy
-    echo "all done, cleanup"
-    sleep 5
     cleanup
 }
 
@@ -224,13 +222,11 @@ function addSong()
             texFile="${latexPath}/${filename}.tex"
             lilypondFile="${lilypondPath}/${filename}.ly"
 
-            mkdir -vp ${latexPath}
-            mkdir -vp ${lilypondPath}
+            mkdir -p ${latexPath}
+            mkdir -p ${lilypondPath}
 
             cp ${templatePath}/${latexTemplate} ${texFile}
             cp ${templatePath}/${lilypondTemplate} ${lilypondFile}
-
-            read -p "Press any key to continue"
 
             sed 's/<SONGTITLE>/'"${title}"'/g' ${texFile} > ${_tmp4}
             cp ${_tmp4} ${texFile}
@@ -257,8 +253,12 @@ function addSong()
             sed 's/<ARRANGER>/'"${arranger}"'/g' ${lilypondFile} > $_tmp4
             cp $_tmp4 ${lilypondFile}
 
-            echo "all done!"
-            sleep 5
+            cd ${lilypondPath}
+            ln -s ../../../LilyPond/songMakefile Makefile
+            cd -
+
+            cp ${templatePath}/gitignore-Template ${lilypondPath}/.gitignore
+
             dialog --msgbox "Script has finished. There should be a new song in 'src/' named '${title}' in 'src/${filename}', have fun!" 0 0 ;
 
             ;;
