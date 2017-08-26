@@ -6,10 +6,12 @@
 \header {
   title = "God's gonna cut you down"
   composer = "Johnny Cash"
-  arranger = "Kate Aumonier & Ben Parker, adapted by Joschka Köster"
+  arranger = "Kate Aumonier & Ben Parker"
+  tagline = "Sheet engraved by JoSh"
 }
 
-#(set-global-staff-size 22)
+#(set-global-staff-size 18)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator
@@ -91,6 +93,7 @@ guitarPart = {
       \clef "G_8"
       \set midiInstrument = #"acoustic guitar (steel)"
       \guitarPart
+      \guitarPart
     }
 
     \new TabStaff {
@@ -98,6 +101,7 @@ guitarPart = {
       %\set midiInstrument = #"acoustic guitar (steel)"
       \set Staff.stringTunings = \stringTuning <c, g, c f a d'>
       \tabFullNotation
+      \guitarPart
       \guitarPart
     }
   >>
