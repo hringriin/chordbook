@@ -3,6 +3,21 @@
 \layout {
 }
 
+CGCFAD =
+\markup {
+  \with-dimensions #'(0 . 0.8) #'(0 . 1.0)
+  \postscript #"/Arial-Bold findfont
+                1.3 scalefont
+                setfont 0 3.6 moveto
+                (D) show 0 2.0 moveto
+                (A) show 0 0.6 moveto
+                (F) show 0 -0.8 moveto
+                (C) show 0 -2.2 moveto
+                (G) show 0 -3.6 moveto
+                (C) show
+                stroke"
+}
+
 \header {
   title = "God's gonna cut you down"
   composer = "Johnny Cash"
@@ -93,15 +108,15 @@ guitarPart = {
       \clef "G_8"
       \set midiInstrument = #"acoustic guitar (steel)"
       \guitarPart
-      \guitarPart
     }
 
     \new TabStaff {
       \global
       %\set midiInstrument = #"acoustic guitar (steel)"
       \set Staff.stringTunings = \stringTuning <c, g, c f a d'>
+      \set TabStaff.instrumentName = \markup { " " \CGCFAD }
+      \set TabStaff.shortInstrumentName = \markup \CGCFAD
       \tabFullNotation
-      \guitarPart
       \guitarPart
     }
   >>
