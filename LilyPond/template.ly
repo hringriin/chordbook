@@ -4,9 +4,9 @@
 }
 
 \header {
-  title = "TITLE"
-  composer = "COMPOSEr"
-  arranger = "ARRANGER"
+  title = "<SONGTITLE>"
+  composer = "<ARTIST>"
+  arranger = "<ARRANGER>"
 }
 
 #(set-global-staff-size 22)

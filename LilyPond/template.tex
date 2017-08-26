@@ -1,0 +1,17 @@
+\stepcounter{subsection}
+
+\beginsong{<SONGTITLE>}[%
+    by={<ARTIST>},
+    cr={<COPYRIGHT>},
+    li={<LICENSE>},
+    index={<INDEX>}]
+
+    \phantomsection
+    \addcontentsline{toc}{subsection}{\thesubsection \quad \textbf{<SONGTITLE>} --- <ARTIST>}
+
+    \label{<INDEX>}
+
+    \beginverse
+        Example verse ...
+    \endverse
+\endsong
