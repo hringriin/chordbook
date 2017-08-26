@@ -167,6 +167,8 @@ function checkLegacy()
 function main()
 {
     checkLegacy
+    echo "all done, cleanup"
+    sleep 5
     cleanup
 }
 
@@ -220,7 +222,7 @@ function addSong()
             lilypondPath="${srcPath}/${filename}/lilypond"
 
             texFile="${latexPath}/${filename}.tex"
-            lilypondFile="${lilypondPath}/${filename}.tex"
+            lilypondFile="${lilypondPath}/${filename}.ly"
 
             mkdir -vp ${latexPath}
             mkdir -vp ${lilypondPath}
@@ -228,31 +230,35 @@ function addSong()
             cp ${templatePath}/${latexTemplate} ${texFile}
             cp ${templatePath}/${lilypondTemplate} ${lilypondFile}
 
-            sed 's/<SONGTITLE>/'${title}'/g' ${texFile} > ${_tmp4}
+            read -p "Press any key to continue"
+
+            sed 's/<SONGTITLE>/'"${title}"'/g' ${texFile} > ${_tmp4}
             cp ${_tmp4} ${texFile}
 
-            sed 's/<ARTIST>/'${artist}'/g' ${texFile} > $_tmp4
+            sed 's/<ARTIST>/'"${artist}"'/g' ${texFile} > $_tmp4
             cp $_tmp4 ${texFile}
 
-            sed 's/<COPYRIGHT>/'${copyright}'/g' ${texFile} > $_tmp4
+            sed 's/<COPYRIGHT>/'"${copyright}"'/g' ${texFile} > $_tmp4
             cp ${_tmp4} ${texFile}
 
-            sed 's/<LICENSE>/'${license}'/g' ${texFile} > $_tmp4
+            sed 's/<LICENSE>/'"${license}"'/g' ${texFile} > $_tmp4
             cp $_tmp4 ${texFile}
 
-            sed 's/<INDEX>/'${filename}'/g' ${texFile} > $_tmp4
+            sed 's/<INDEX>/'"${filename}"'/g' ${texFile} > $_tmp4
             cp $_tmp4 ${texFile}
 
 
-            sed 's/<SONGTITLE>/'${title}'/g' ${lilypondFile} > $_tmp4
+            sed 's/<SONGTITLE>/'"${title}"'/g' ${lilypondFile} > $_tmp4
             cp $_tmp4 ${lilypondFile}
 
-            sed 's/<ARTIST>/'${artist}'/g' ${lilypondFile} > $_tmp4
+            sed 's/<ARTIST>/'"${artist}"'/g' ${lilypondFile} > $_tmp4
             cp $_tmp4 ${lilypondFile}
 
-            sed 's/<ARRANGER>/'${arranger}'/g' ${lilypondFile} > $_tmp4
+            sed 's/<ARRANGER>/'"${arranger}"'/g' ${lilypondFile} > $_tmp4
             cp $_tmp4 ${lilypondFile}
 
+            echo "all done!"
+            sleep 5
             dialog --msgbox "Script has finished. There should be a new song in 'src/' named '${title}' in 'src/${filename}', have fun!" 0 0 ;
 
             ;;
