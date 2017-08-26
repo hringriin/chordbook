@@ -4,7 +4,7 @@
 }
 
 \header {
-  title = "Mein kleiner gruener Goblin"
+  title = "Mein kleiner grüner Goblin"
   composer = "Comedian Harmonists"
   arranger = ""
 }
