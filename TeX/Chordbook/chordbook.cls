@@ -83,6 +83,8 @@
 %   Zwei Spalten, eine Zeile
 %   \includepdf[pages=2-5,nup=2x1]{/path/to/file}
 %
+%   [width=\textwidth]
+%
 % Seiten im Landscapeformat mit der Option ``landscape=true'' einbinden
 \RequirePackage[final]{pdfpages}
 
