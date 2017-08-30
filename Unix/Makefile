@@ -1,6 +1,7 @@
 movepdf = yes
 
 FILENAME=../TeX/Chordbook/Chordbook
+FILENAME_EXTENDED=../TeX/Chordbook_Extended/Chordbook_Extended
 PDF=Chordbook.pdf
 
 all: document clean
@@ -35,6 +36,36 @@ lilypond:
 server: document clean
 	cp -rf $(PDF) /var/www/archive.chordbook/LATEST_$(PDF)
 	cp -rf $(PDF) /var/www/archive.chordbook/`date "+%Y-%m-%d_%H:%M:%S"`_$(PDF)
+
+extended: document lilypond document_extended clean
+
+document_extended:
+	@clear
+	@echo "+-----------------------------------------------------+";
+	@echo "|  Compiling 'Chordbook' .. This may take a while ..  |";
+	@echo "+-----------------------------------------------------+";
+	@sleep 1
+	pdflatex $(FILENAME_EXTENDED).tex;
+	@if(grep "citation" $(FILENAME_EXTENDED).aux > /dev/null); \
+		then \
+			bibtex $(FILENAME_EXTENDED); \
+			pdflatex $(FILENAME_EXTENDED).tex; \
+	fi;
+	
+	@if(grep "istfilename" $(FILENAME_EXTENDED).aux > /dev/null); \
+		then \
+			makeglossaries $(FILENAME_EXTENDED); \
+			pdflatex $(FILENAME_EXTENDED).tex; \
+			makeglossaries $(FILENAME_EXTENDED); \
+	fi;
+	
+	@if(grep "citation" $(FILENAME_EXTENDED).aux > /dev/null); \
+		then \
+			bibtex $(FILENAME_EXTENDED); \
+			pdflatex $(FILENAME_EXTENDED).tex; \
+	fi;
+	pdflatex $(FILENAME_EXTENDED).tex;
+	pdflatex $(FILENAME_EXTENDED).tex;
 
 document:
 	@clear
