@@ -212,7 +212,7 @@ function addSong()
             arranger="${area[5]}"
 
             srcPath="src"
-            templatePath="LilyPond"
+            templatePath="Templates"
             latexTemplate="template.tex"
             lilypondTemplate="template.ly"
 

@@ -1,1 +1,1 @@
-../../../LilyPond/songMakefile
+../../../Templates/songMakefile

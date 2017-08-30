@@ -29,7 +29,7 @@ rmpdf:
 	rm -f $(PDF);
 
 lilypond:
-	$(MAKE) -C ../LilyPond/
+	$(MAKE) -C ../Templates/
 
 # for server deploy
 server: document clean
