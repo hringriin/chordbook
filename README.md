@@ -44,9 +44,10 @@ To compile simply type `make` after a directory change into `Chordbook/Unix`
 
 #### Extended Version
 
-If you have `lilypond` installed, you can also type `make lilypond` to compile all lilypond files at
-once. If you type `make extended` you will compile the *normal* chordbook an extended version with
-all lilypond files and notations and all the stuff I gathered around each song as well.
+If you have `lilypond` installed, you can also type `make lilypond` to compile
+all lilypond files at once. If you type `make extended` you will compile the
+*normal* chordbook **and** an extended version with all lilypond files and
+notations and all the stuff I gathered around each song as well.
 
 **Please note that compiling the lilypond files at once may take a very long time. You probably want
 to run that on a beefier computer.**
