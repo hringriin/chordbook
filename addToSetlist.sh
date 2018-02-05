@@ -254,7 +254,7 @@ function addSong()
             cp $_tmp4 ${lilypondFile}
 
             cd ${lilypondPath}
-            ln -s ../../../LilyPond/songMakefile Makefile
+            ln -s ../../../Templates/songMakefile Makefile
             cd -
 
             cp ${templatePath}/gitignore-Template ${lilypondPath}/.gitignore
