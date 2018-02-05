@@ -29,6 +29,11 @@ Check your distributions package manager on how to do so.
 
 On `Arch Linux` install every texlive package with `pacman -S $(pacman -Ssq texlive)`
 
+`Ubuntu` users can do so by typing `apt install texlive*`.
+
+**Please note that this is not the most elegant way no how to install Texlive, but it makes sure,
+that every package needed by this project is installed.**
+
 Make sure that Perl is installed.
 
 
