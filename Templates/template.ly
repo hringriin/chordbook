@@ -1,3 +1,5 @@
+% vim: set ft=lilypond
+
 \version "2.18.2"
 
 \layout {
