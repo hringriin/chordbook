@@ -6,10 +6,13 @@ PDF=Chordbook.pdf
 
 all: document clean
 
+extended: document lilypond document_extended clean
+
 clean:
 	@echo "+-------------------------------------------+";
 	@echo "|  Deleting temporary files - cleaning up!  |";
 	@echo "+-------------------------------------------+";
+	@sleep 2
 	rm -f *.aux;
 	rm -f *.bbl;
 	rm -f *.blg;
@@ -27,9 +30,14 @@ rmpdf:
 	@echo "+----------------+";
 	@echo "|  Deleting PDF  |";
 	@echo "+----------------+";
+	@sleep 2
 	rm -f $(PDF);
 
 lilypond:
+	@echo "+-----------------------------------------------------+";
+	@echo "|  Compiling 'Lilypond' - This may take a long time!  |";
+	@echo "+-----------------------------------------------------+";
+	@sleep 2
 	$(MAKE) -C ../Templates/
 
 # for server deploy
@@ -37,14 +45,11 @@ server: document clean
 	cp -rf $(PDF) /var/www/archive.chordbook/LATEST_$(PDF)
 	cp -rf $(PDF) /var/www/archive.chordbook/`date "+%Y-%m-%d_%H:%M:%S"`_$(PDF)
 
-extended: document lilypond document_extended clean
-
 document_extended:
-	@clear
-	@echo "+-----------------------------------------------------+";
-	@echo "|  Compiling 'Chordbook' .. This may take a while ..  |";
-	@echo "+-----------------------------------------------------+";
-	@sleep 1
+	@echo "+----------------------------------+";
+	@echo "|  Compiling 'EXTENDED Chordbook'  |";
+	@echo "+----------------------------------+";
+	@sleep 2
 	pdflatex $(FILENAME_EXTENDED).tex;
 	@if(grep "citation" $(FILENAME_EXTENDED).aux > /dev/null); \
 		then \
@@ -69,10 +74,10 @@ document_extended:
 
 document:
 	@clear
-	@echo "+-----------------------------------------------------+";
-	@echo "|  Compiling 'Chordbook' .. This may take a while ..  |";
-	@echo "+-----------------------------------------------------+";
-	@sleep 1
+	@echo "+-------------------------+";
+	@echo "|  Compiling 'Chordbook'  |";
+	@echo "+-------------------------+";
+	@sleep 2
 	pdflatex $(FILENAME).tex;
 	@if(grep "citation" $(FILENAME).aux > /dev/null); \
 		then \
@@ -96,4 +101,8 @@ document:
 	pdflatex $(FILENAME).tex;
 
 copyPDF:
+	@echo "+--------------------------------------+";
+	@echo "|  Copying PDF and renaming properly!  |";
+	@echo "+--------------------------------------+";
+	@sleep 2
 	cp -iv $(PDF) ../Chordbook/`date "+%Y-%m-%d_%H:%M:%S"`_$(PDF)
