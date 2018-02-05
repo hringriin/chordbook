@@ -1,5 +1,3 @@
-# ATTENTION PLEASE
-
 # Chordbook
 
 ## About this Repository in my native language
