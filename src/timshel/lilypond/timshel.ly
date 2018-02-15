@@ -1,3 +1,5 @@
+% vim: ft=lilypond:
+
 \version "2.14.2"
 
 
