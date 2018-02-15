@@ -1,3 +1,5 @@
+% vim: ft=tex
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{chordbook}
 \LoadClass[12pt,a4paper,titlepage,twoside]{scrartcl}
