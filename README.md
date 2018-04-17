@@ -78,4 +78,4 @@ You cann always [write an E-Mail][mailme] for any kind of information regarding 
 [mactex]: https://tug.org/mactex/ "MacTex-2015"
 [miktexdlpage]: https://miktex.org/download "MikTex Download"
 [perldllink]: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/dwimperl/dwimperl-5.14.2.1-v7-32bit.exe "Perl for Windows"
-[cbdlpage]: https://chordbook.niederhoelle.de "Downloadpage Chordbook"
+[cbdlpage]: https://chordbook.barzh.eu "Downloadpage Chordbook"
