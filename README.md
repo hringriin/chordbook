@@ -27,11 +27,11 @@ Please note that I *do not support* compiling this document on Windows or Mac OS
 You need `Texlive` and `Perl` installed
 Check your distributions package manager on how to do so.
 
-On `Arch Linux` install every texlive package with `pacman -S $(pacman -Ssq texlive)`
+On `Arch Linux` install every `texlive`-package with `pacman -S $(pacman -Ssq texlive)`
 
 `Ubuntu` users can do so by typing `apt install texlive*`.
 
-**Please note that this is not the most elegant way no how to install Texlive, but it makes sure,
+**Please note that this is not the most elegant way no how to install TeXlive, but it makes sure,
 that every package needed by this project is installed.**
 
 Make sure that Perl is installed.
@@ -46,13 +46,13 @@ To compile simply type `make` after a directory change into `Chordbook/Unix`
 
 If you have `lilypond` installed, you can also type `make lilypond` to compile
 all lilypond files at once. If you type `make extended` you will compile the
-*normal* chordbook **and** an extended version with all lilypond files and
+*normal* Chordbook **and** an extended version with all lilypond files and
 notations and all the stuff I gathered around each song as well.
 
 **Please note that compiling the lilypond files at once may take a very long time. You probably want
 to run that on a beefier computer.**
 
-**Please note that the extended chordbook version is in a pre-alpha state and not meant to be
+**Please note that the extended Chordbook version is in a pre-alpha state and not meant to be
 working to this time.**
 
 
@@ -69,7 +69,7 @@ I'd appreciate every kind of help!
 
 For bugs or everything regarding the content, please write an issue or do a pull request.
 
-You cann always [write an E-Mail][mailme] for any kind of information regarding this repository.
+You can always [write an E-Mail][mailme] for any kind of information regarding this repository.
 
 
 
