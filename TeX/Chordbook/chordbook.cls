@@ -102,3 +102,12 @@
 
 % Lipsum
 \RequirePackage{lipsum}
+
+% Including PDF files in landscape
+\RequirePackage{pdflscape}
+
+% just a try to omit blank pages in the document. leaving this here for now
+\RequirePackage{afterpage}
+
+% color boxes with text and headline
+\RequirePackage{tcolorbox}

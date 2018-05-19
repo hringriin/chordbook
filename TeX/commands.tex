@@ -1,0 +1,18 @@
+% vim: ft=tex
+
+% trying to omit blank pages
+\newcommand{\blankpage}{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+\newcommand{\wpage}{\afterpage{\blankpage}}
+
+% songs package related
+\renewcommand{\snumbgcolor}{songnr}
+\renewcommand{\notebgcolor}{notes}
+\renewcommand\printchord[1]{\footnotesize\sffamily\textit{\textcolor{linkcolor}{{#1}}}}
+
+% landscape
+\songcolumns{2}
+\columnsep=3mm

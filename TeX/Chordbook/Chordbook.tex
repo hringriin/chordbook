@@ -2,17 +2,10 @@
 
 \documentclass[landscape]{../TeX/Chordbook/chordbook}
 
-\usepackage{pdflscape}
-\usepackage{afterpage}
-\usepackage{tcolorbox}
+% custom commands
+\input{../TeX/commands.tex}
 
-\newcommand{\blankpage}{%
-    \null
-    \thispagestyle{empty}%
-    \addtocounter{page}{-1}%
-    \newpage}
-\newcommand{\wpage}{\afterpage{\blankpage}}
-
+% having links in the document
 \usepackage[%
     colorlinks=true,
     pdfstartview=FitV,
@@ -25,6 +18,7 @@
 
 \begin{document}
 
+% defines 'sections' like 'verse' or 'chorus' or your own
 \newchords{verse}
 \newchords{alt-verse}
 \newchords{chorus}
@@ -39,159 +33,129 @@
 
 \maketitle \clearpage
 
-\begin{center}
-    { \Large
-        \begin{minipage}[h]{0.7\textwidth}
-            \begin{tcolorbox}[colback=red!7,colframe=red!70!black,fonttitle=\bfseries,title=Disclaimer]
-                Dieses \textit{Chordbook} stellt eine pers\"{o}nliche und vielf\"{a}ltige Sammlung von Liedgut dar, die ich \"{u}ber die Jahre gesammelt habe.
-                Ich erhebe keinen Anspruch auf Eigentum oder Richtigkeit der Dargestellten Texte oder Akkorde, z.T. habe ich sie von anderen Menschen \"{u}bernommen und mit der Zeit selbst abgewandelt, z.T. habe ich sie mir selber durch H\"{o}ren oder Video-Material abkupfern k\"{o}nnen. \par\medskip
-
-                Sollte es Einw\"{a}nde gegen ein oder mehrere Lieder oder Texte geben, bin ich \"{u}ber meine E-Mail Adresse \href{mailto:hringriin@gmail.com}{\texttt{hringriin@gmail.com}} erreichbar. \par\medskip
-
-                Dank \textsc{Fagus vom Friedrichshain} konnte ich mein Chordbook um einige St\"{u}cke erweitern.
-                Seine Beitr\"{a}ge sind gekennzeichnet oder werden noch gekennzeichnet werden.
-            \end{tcolorbox}
-
-            \vspace{2cm}
-
-            \begin{tcolorbox}[colback=red!7,colframe=red!70!black,fonttitle=\bfseries,title=Stimmung der Gitarre]
-                Meine Gitarre ist in \texttt{D} gestimmt \texttt{(DGCFAd)}, d.h. die aufgeführten Akkorde sind nur "Griffmuster".
-                Ggf. aufgeführte \texttt{capo x} Ansagen beziehen die tiefer gestimmte Gitarre mit ein.
-                Eine Stück mit \texttt{capo 4} auf meiner Gitarre ist also ein \texttt{capo 2} auf "normalen" Gitarren.
-            \end{tcolorbox}
-        \end{minipage}
-    }
-\end{center}
+\input{../TeX/Disclaimer.tex}
 
 \clearpage
 
 \tableofcontents \clearpage
 
-% landscape
-\songcolumns{2}
-\columnsep=3mm
+%\clearpage
+%\songsection{A Capella}
+%    \begin{songs}{}
+%        %\input{../src/hasso/LaTeX/hasso}                                                                                    \sclearpage
+%        %\input{../src/mad_world/LaTeX/mad_world}                                                                            \sclearpage
+%        %\input{../src/walk_down_that_lonesome_road/LaTeX/walk_down_that_lonesome_road}
+%    \end{songs}
 
-\renewcommand{\snumbgcolor}{songnr}
-\renewcommand{\notebgcolor}{notes}
-\renewcommand\printchord[1]{\footnotesize\sffamily\textit{\textcolor{linkcolor}{{#1}}}}
+%\clearpage
+%\songsection{Classic}
+%    \begin{songs}{}
+%        %\input{../src/der_leiermann/LaTeX/der_leiermann}
+%    \end{songs}
 
-    %\clearpage
-    %\songsection{A Capella}
-    %    \begin{songs}{}
-    %        %\input{../src/hasso/LaTeX/hasso}                                                                                    \sclearpage
-    %        %\input{../src/mad_world/LaTeX/mad_world}                                                                            \sclearpage
-    %        %\input{../src/walk_down_that_lonesome_road/LaTeX/walk_down_that_lonesome_road}
-    %    \end{songs}
+\clearpage
+\songsection{Folk and Medieval}
+    \begin{songs}{}
+        %\input{../src/das_bier_ich_in_der_rechten_trug/LaTeX/das_bier_ich_in_der_rechten_trug}                              \sclearpage
+        %\input{../src/der_wandersmann/LaTeX/der_wandersmann}                                                                \sclearpage
+        %\input{../src/dunkle_stunde/LaTeX/dunkle_stunde}                                                                    \sclearpage
+        %\input{../src/far_over_the_misty_mountains_cold/LaTeX/far_over_the_misty_mountains_cold}                            \sclearpage
+        \input{../src/geisterschiff/LaTeX/geisterschiff}                                                                    \sclearpage
+        %\input{../src/grau_sind_die_schwingen/LaTeX/grau_sind_die_schwingen}                                                \sclearpage
+        %\input{../src/i_see_fire/LaTeX/i_see_fire}                                                                          \sclearpage
+        %\input{../src/ich_und_ein_fass_voller_wein/LaTeX/ich_und_ein_fass_voller_wein}                                      \sclearpage
+        %\input{../src/i_courted_a_wee_girl/LaTeX/i_courted_a_wee_girl}                                                      \sclearpage
+        %\input{../src/ihr_so_nah/LaTeX/ihr_so_nah}                                                                          \sclearpage
+        %\input{../src/kleid_aus_rosen/LaTeX/kleid_aus_rosen}                                                                \sclearpage
+        %\input{../src/lord_of_the_rings/LaTeX/lord_of_the_rings}                                                            \sclearpage
+        %\input{../src/making_up_the_miles/LaTeX/making_up_the_miles}                                                        \sclearpage
+        \input{../src/mord_auf_dem_abort/LaTeX/mord_auf_dem_abort}                                                          \sclearpage
+        %\input{../src/nebel_ueber_den_auen/LaTeX/nebel_ueber_den_auen}                                                      \sclearpage
+        %\input{../src/oh_adelsmann/LaTeX/oh_adelsmann}                                                                      \sclearpage
+        %\input{../src/prinzessin/LaTeX/prinzessin}                                                                          \sclearpage
+        %\input{../src/scotland_the_brave/LaTeX/scotland_the_brave}                                                          \sclearpage
+        %\input{../src/senzenina/LaTeX/senzenina}                                                                            \sclearpage
+        %\input{../src/step_it_out_mary/LaTeX/step_it_out_mary}                                                              \sclearpage
+        %\input{../src/tanz_mit_mir/LaTeX/tanz_mit_mir}                                                                      \sclearpage
+        %\input{../src/the_bards_song/LaTeX/the_bards_song}                                                                  \sclearpage
+        %\input{../src/the_bonny_ship_the_diamond/LaTeX/the_bonny_ship_the_diamond}                                          \sclearpage
+        %\input{../src/the_dragonborn_comes/LaTeX/the_dragonborn_comes}                                                      \sclearpage
+        \input{../src/the_rattlin_bog/LaTeX/the_rattlin_bog}                                                                \sclearpage
+        \input{../src/the_wild_rover/LaTeX/the_wild_rover}                                                                  \sclearpage
+        %\input{../src/trunckenbolde/LaTeX/trunckenbolde}                                                                    \sclearpage
+        %\input{../src/willst_du/LaTeX/willst_du}                                                                            \sclearpage
+        %\input{../src/wout_mit_den_woelfen/LaTeX/wout_mit_den_woelfen}                                                      \sclearpage
+        %\input{../src/ye_jackobites/LaTeX/ye_jackobites}
+    \end{songs}
 
-    %\clearpage
-    %\songsection{Classic}
-    %    \begin{songs}{}
-    %        %\input{../src/der_leiermann/LaTeX/der_leiermann}
-    %    \end{songs}
+\clearpage
+\songsection{Fun}
+    \begin{songs}{}
+        %\input{../src/a_gracing_mace/LaTeX/a_gracing_mace}                                                                  \sclearpage
+        %\input{../src/blau_wie_das_meer/LaTeX/blau_wie_das_meer}                                                            \sclearpage
+        %\input{../src/die_nackte_elfe/LaTeX/die_nackte_elfe}                                                                \sclearpage
+        %\input{../src/dragonball/LaTeX/dragonball}                                                                          \sclearpage
+        %\input{../src/buenas_tardes_amigo/LaTeX/buenas_tardes_amigo}                                                        \sclearpage
+        \input{../src/death_to_the_drow/LaTeX/death_to_the_drow}                                                            \sclearpage
+        %\input{../src/eine_leiche_im_teich/LaTeX/eine_leiche_im_teich}                                                      \sclearpage
+        %\input{../src/ethik_der_fuesse/LaTeX/ethik_der_fuesse}                                                              \sclearpage
+        \input{../src/fassbier_und_paladosen/LaTeX/fassbier_und_paladosen}                                                  \sclearpage
+        %\input{../src/gossenabitur/LaTeX/gossenabitur}                                                                      \sclearpage
+        \input{../src/hes_a_pirate/LaTeX/hes_a_pirate}                                                                      \sclearpage
+        %\input{../src/i_need_a_sheep/LaTeX/i_need_a_sheep}                                                                  \sclearpage
+        %\input{../src/kaperfahrt/LaTeX/kaperfahrt}                                                                          \sclearpage
+        %\input{../src/kickapoo/LaTeX/kickapoo}                                                                              \sclearpage
+        %\input{../src/mein_kleiner_gruener_goblin/LaTeX/mein_kleiner_gruener_goblin}                                        \sclearpage
+        %\input{../src/nscs_luegen_nicht/LaTeX/nscs_luegen_nicht}                                                            \sclearpage
+        %\input{../src/pippi_langstrumpf/LaTeX/pippi_langstrumpf}                                                            \sclearpage
+        %\input{../src/sauf_mich_schoen/LaTeX/sauf_mich_schoen}                                                              \sclearpage
+        %\input{../src/seehilfe/LaTeX/seehilfe}                                                                              \sclearpage
+        %\input{../src/stille_nacht-LARP/LaTeX/stille_nacht-LARP}                                                            \sclearpage
+        %\input{../src/super_knasterbart/LaTeX/super_knasterbart}                                                            \sclearpage
+        %\input{../src/trigardon/LaTeX/trigardon}                                                                            \sclearpage
+        \input{../src/the_enchanter/LaTeX/the_enchanter}                                                                    \sclearpage
+        %\input{../src/untot_auf_urlaub/LaTeX/untot_auf_urlaub}                                                              \sclearpage
+        %\input{../src/viking_men/LaTeX/viking_men}
+    \end{songs}{}
 
-    \clearpage
-    \songsection{Folk and Medieval}
-        \begin{songs}{}
-            %\input{../src/das_bier_ich_in_der_rechten_trug/LaTeX/das_bier_ich_in_der_rechten_trug}                              \sclearpage
-            %\input{../src/der_wandersmann/LaTeX/der_wandersmann}                                                                \sclearpage
-            %\input{../src/dunkle_stunde/LaTeX/dunkle_stunde}                                                                    \sclearpage
-            %\input{../src/far_over_the_misty_mountains_cold/LaTeX/far_over_the_misty_mountains_cold}                            \sclearpage
-            \input{../src/geisterschiff/LaTeX/geisterschiff}                                                                    \sclearpage
-            %\input{../src/grau_sind_die_schwingen/LaTeX/grau_sind_die_schwingen}                                                \sclearpage
-            %\input{../src/i_see_fire/LaTeX/i_see_fire}                                                                          \sclearpage
-            %\input{../src/ich_und_ein_fass_voller_wein/LaTeX/ich_und_ein_fass_voller_wein}                                      \sclearpage
-            %\input{../src/i_courted_a_wee_girl/LaTeX/i_courted_a_wee_girl}                                                      \sclearpage
-            %\input{../src/ihr_so_nah/LaTeX/ihr_so_nah}                                                                          \sclearpage
-            %\input{../src/kleid_aus_rosen/LaTeX/kleid_aus_rosen}                                                                \sclearpage
-            %\input{../src/lord_of_the_rings/LaTeX/lord_of_the_rings}                                                            \sclearpage
-            %\input{../src/making_up_the_miles/LaTeX/making_up_the_miles}                                                        \sclearpage
-            \input{../src/mord_auf_dem_abort/LaTeX/mord_auf_dem_abort}                                                          \sclearpage
-            %\input{../src/nebel_ueber_den_auen/LaTeX/nebel_ueber_den_auen}                                                      \sclearpage
-            %\input{../src/oh_adelsmann/LaTeX/oh_adelsmann}                                                                      \sclearpage
-            %\input{../src/prinzessin/LaTeX/prinzessin}                                                                          \sclearpage
-            %\input{../src/scotland_the_brave/LaTeX/scotland_the_brave}                                                          \sclearpage
-            %\input{../src/senzenina/LaTeX/senzenina}                                                                            \sclearpage
-            %\input{../src/step_it_out_mary/LaTeX/step_it_out_mary}                                                              \sclearpage
-            %\input{../src/tanz_mit_mir/LaTeX/tanz_mit_mir}                                                                      \sclearpage
-            %\input{../src/the_bards_song/LaTeX/the_bards_song}                                                                  \sclearpage
-            %\input{../src/the_bonny_ship_the_diamond/LaTeX/the_bonny_ship_the_diamond}                                          \sclearpage
-            %\input{../src/the_dragonborn_comes/LaTeX/the_dragonborn_comes}                                                      \sclearpage
-            \input{../src/the_rattlin_bog/LaTeX/the_rattlin_bog}                                                                \sclearpage
-            \input{../src/the_wild_rover/LaTeX/the_wild_rover}                                                                  \sclearpage
-            %\input{../src/trunckenbolde/LaTeX/trunckenbolde}                                                                    \sclearpage
-            %\input{../src/willst_du/LaTeX/willst_du}                                                                            \sclearpage
-            %\input{../src/wout_mit_den_woelfen/LaTeX/wout_mit_den_woelfen}                                                      \sclearpage
-            %\input{../src/ye_jackobites/LaTeX/ye_jackobites}
-        \end{songs}
+%\clearpage
+%\songsection{Modern / Rock / Blues}{}
+%    \begin{songs}{}
+%        %\input{../src/everything_burns/LaTeX/everything_burns}                                                              \sclearpage
+%        %\input{../src/leap_into_the_dark/LaTeX/leap_into_the_dark}                                                          \sclearpage
+%        %\input{../src/little_talks/LaTeX/little_talks}                                                                      \sclearpage
+%        %\input{../src/mountain_climbing/LaTeX/mountain_climbing}                                                            \sclearpage
+%        %\input{../src/rolling_in_the_deep/LaTeX/rolling_in_the_deep}                                                        \sclearpage
+%        %\input{../src/seven_nation_army/LaTeX/seven_nation_army}                                                            \sclearpage
+%        %\input{../src/sound_of_silence/LaTeX/sound_of_silence}                                                              \sclearpage
+%        %\input{../src/summer_wine/LaTeX/summer_wine}                                                                        \sclearpage
+%        %\input{../src/timshel/LaTeX/timshel}                                                                                \sclearpage
+%        %\input{../src/wo_sind_die_clowns/LaTeX/wo_sind_die_clowns}
+%    \end{songs}
 
-    \clearpage
-    \songsection{Fun}
-        \begin{songs}{}
-            %\input{../src/a_gracing_mace/LaTeX/a_gracing_mace}                                                                  \sclearpage
-            %\input{../src/blau_wie_das_meer/LaTeX/blau_wie_das_meer}                                                            \sclearpage
-            %\input{../src/die_nackte_elfe/LaTeX/die_nackte_elfe}                                                                \sclearpage
-            %\input{../src/dragonball/LaTeX/dragonball}                                                                          \sclearpage
-            %\input{../src/buenas_tardes_amigo/LaTeX/buenas_tardes_amigo}                                                        \sclearpage
-            \input{../src/death_to_the_drow/LaTeX/death_to_the_drow}                                                            \sclearpage
-            %\input{../src/eine_leiche_im_teich/LaTeX/eine_leiche_im_teich}                                                      \sclearpage
-            %\input{../src/ethik_der_fuesse/LaTeX/ethik_der_fuesse}                                                              \sclearpage
-            \input{../src/fassbier_und_paladosen/LaTeX/fassbier_und_paladosen}                                                  \sclearpage
-            %\input{../src/gossenabitur/LaTeX/gossenabitur}                                                                      \sclearpage
-            \input{../src/hes_a_pirate/LaTeX/hes_a_pirate}                                                                      \sclearpage
-            %\input{../src/i_need_a_sheep/LaTeX/i_need_a_sheep}                                                                  \sclearpage
-            %\input{../src/kaperfahrt/LaTeX/kaperfahrt}                                                                          \sclearpage
-            %\input{../src/kickapoo/LaTeX/kickapoo}                                                                              \sclearpage
-            %\input{../src/mein_kleiner_gruener_goblin/LaTeX/mein_kleiner_gruener_goblin}                                        \sclearpage
-            %\input{../src/nscs_luegen_nicht/LaTeX/nscs_luegen_nicht}                                                            \sclearpage
-            %\input{../src/pippi_langstrumpf/LaTeX/pippi_langstrumpf}                                                            \sclearpage
-            %\input{../src/sauf_mich_schoen/LaTeX/sauf_mich_schoen}                                                              \sclearpage
-            %\input{../src/seehilfe/LaTeX/seehilfe}                                                                              \sclearpage
-            %\input{../src/stille_nacht-LARP/LaTeX/stille_nacht-LARP}                                                            \sclearpage
-            %\input{../src/super_knasterbart/LaTeX/super_knasterbart}                                                            \sclearpage
-            %\input{../src/trigardon/LaTeX/trigardon}                                                                            \sclearpage
-            \input{../src/the_enchanter/LaTeX/the_enchanter}                                                                    \sclearpage
-            %\input{../src/untot_auf_urlaub/LaTeX/untot_auf_urlaub}                                                              \sclearpage
-            %\input{../src/viking_men/LaTeX/viking_men}
-        \end{songs}{}
-
-    %\clearpage
-    %\songsection{Modern / Rock / Blues}{}
-    %    \begin{songs}{}
-    %        %\input{../src/everything_burns/LaTeX/everything_burns}                                                              \sclearpage
-    %        %\input{../src/leap_into_the_dark/LaTeX/leap_into_the_dark}                                                          \sclearpage
-    %        %\input{../src/little_talks/LaTeX/little_talks}                                                                      \sclearpage
-    %        %\input{../src/mountain_climbing/LaTeX/mountain_climbing}                                                            \sclearpage
-    %        %\input{../src/rolling_in_the_deep/LaTeX/rolling_in_the_deep}                                                        \sclearpage
-    %        %\input{../src/seven_nation_army/LaTeX/seven_nation_army}                                                            \sclearpage
-    %        %\input{../src/sound_of_silence/LaTeX/sound_of_silence}                                                              \sclearpage
-    %        %\input{../src/summer_wine/LaTeX/summer_wine}                                                                        \sclearpage
-    %        %\input{../src/timshel/LaTeX/timshel}                                                                                \sclearpage
-    %        %\input{../src/wo_sind_die_clowns/LaTeX/wo_sind_die_clowns}
-    %    \end{songs}
-
-    \clearpage
-    \songsection{Oldies}
-        \begin{songs}{}
-            %\input{../src/and_so_it_goes/LaTeX/and_so_it_goes}                                                                  \sclearpage
-            %\input{../src/back_in_the_high_life/LaTeX/back_in_the_high_life}                                                    \sclearpage
-            %\input{../src/blackbird/LaTeX/blackbird}                                                                            \sclearpage
-            %\input{../src/blowing_in_the_wind/LaTeX/blowing_in_the_wind}                                                        \sclearpage
-            %\input{../src/dimming_of_the_day/LaTeX/dimming_of_the_day}                                                          \sclearpage
-            %\input{../src/fragile/LaTeX/fragile}                                                                                \sclearpage
-            \input{../src/gods_gonna_cut_you_down/LaTeX/gods_gonna_cut_you_down}                                                \sclearpage
-            %\input{../src/havent_we_lost_enough/LaTeX/havent_we_lost_enough}                                                    \sclearpage
-            %\input{../src/hallelujah/LaTeX/hallelujah}                                                                          \sclearpage
-            %\input{../src/helplessly_hoping/LaTeX/helplessly_hoping}                                                            \sclearpage
-            %\input{../src/constant_sorrow/LaTeX/constant_sorrow}                                                                \sclearpage
-            %\input{../src/it_doesnt_matter/LaTeX/it_doesnt_matter}                                                              \sclearpage
-            %\input{../src/layla/LaTeX/layla.tex}                                                                                \sclearpage
-            %\input{../src/lives_in_the_balance/LaTeX/lives_in_the_balance}                                                      \sclearpage
-            %\input{../src/moonshadow/LaTeX/moonshadow}                                                                          \sclearpage
-            %\input{../src/rainbow_in_the_dark/LaTeX/rainbow_in_the_dark}                                                        \sclearpage
-            %\input{../src/sailing_to_philadelphia/LaTeX/sailing_to_philadelphia}                                                \sclearpage
-            %\input{../src/teach_your_children/LaTeX/teach_your_children}                                                        \sclearpage
-            \input{../src/the_green_fields_of_france/LaTeX/the_green_fields_of_france}                                          \sclearpage
-            %\input{../src/up_where_we_belong/LaTeX/up_where_we_belong}                                                          \sclearpage
-            %\input{../src/walking_in_memphis/LaTeX/walking_in_memphis}
-        \end{songs}
+\clearpage
+\songsection{Oldies}
+    \begin{songs}{}
+        %\input{../src/and_so_it_goes/LaTeX/and_so_it_goes}                                                                  \sclearpage
+        %\input{../src/back_in_the_high_life/LaTeX/back_in_the_high_life}                                                    \sclearpage
+        %\input{../src/blackbird/LaTeX/blackbird}                                                                            \sclearpage
+        %\input{../src/blowing_in_the_wind/LaTeX/blowing_in_the_wind}                                                        \sclearpage
+        %\input{../src/dimming_of_the_day/LaTeX/dimming_of_the_day}                                                          \sclearpage
+        %\input{../src/fragile/LaTeX/fragile}                                                                                \sclearpage
+        \input{../src/gods_gonna_cut_you_down/LaTeX/gods_gonna_cut_you_down}                                                \sclearpage
+        %\input{../src/havent_we_lost_enough/LaTeX/havent_we_lost_enough}                                                    \sclearpage
+        %\input{../src/hallelujah/LaTeX/hallelujah}                                                                          \sclearpage
+        %\input{../src/helplessly_hoping/LaTeX/helplessly_hoping}                                                            \sclearpage
+        %\input{../src/constant_sorrow/LaTeX/constant_sorrow}                                                                \sclearpage
+        %\input{../src/it_doesnt_matter/LaTeX/it_doesnt_matter}                                                              \sclearpage
+        %\input{../src/layla/LaTeX/layla.tex}                                                                                \sclearpage
+        %\input{../src/lives_in_the_balance/LaTeX/lives_in_the_balance}                                                      \sclearpage
+        %\input{../src/moonshadow/LaTeX/moonshadow}                                                                          \sclearpage
+        %\input{../src/rainbow_in_the_dark/LaTeX/rainbow_in_the_dark}                                                        \sclearpage
+        %\input{../src/sailing_to_philadelphia/LaTeX/sailing_to_philadelphia}                                                \sclearpage
+        %\input{../src/teach_your_children/LaTeX/teach_your_children}                                                        \sclearpage
+        \input{../src/the_green_fields_of_france/LaTeX/the_green_fields_of_france}                                          \sclearpage
+        %\input{../src/up_where_we_belong/LaTeX/up_where_we_belong}                                                          \sclearpage
+        %\input{../src/walking_in_memphis/LaTeX/walking_in_memphis}
+    \end{songs}
 \end{document}
