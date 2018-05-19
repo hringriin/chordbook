@@ -6,12 +6,13 @@
 }
 
 \header {
-  title = "TITLE"
-  composer = "COMPOSEr"
-  arranger = "ARRANGER"
+  title = "Sauf' mich schön"
+  composer = "Knasterbart"
+  arranger = "Joschka Köster"
 }
 
 #(set-global-staff-size 22)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator

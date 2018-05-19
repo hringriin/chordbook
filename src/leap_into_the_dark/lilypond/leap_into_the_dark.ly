@@ -8,10 +8,11 @@
 \header {
   title = "Leap into the Dark"
   composer = "aequitaS"
-  arranger = ""
+  arranger = "Joschka Köster"
 }
 
 #(set-global-staff-size 22)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator

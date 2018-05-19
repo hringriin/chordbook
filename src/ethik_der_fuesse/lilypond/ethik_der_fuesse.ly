@@ -6,12 +6,13 @@
 }
 
 \header {
-  title = "TITLE"
-  composer = "COMPOSEr"
-  arranger = "ARRANGER"
+  title = "Ethik der Füße"
+  composer = "Tim Runde, Ines Fürstenau"
+  arranger = "Joschka Köster"
 }
 
 #(set-global-staff-size 22)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator

@@ -8,10 +8,11 @@
 \header {
   title = "I Need A Sheep"
   composer = "Unknown"
-  arranger = ""
+  arranger = "Joschka Köster"
 }
 
 #(set-global-staff-size 22)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator

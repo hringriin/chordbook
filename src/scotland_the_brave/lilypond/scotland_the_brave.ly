@@ -8,10 +8,11 @@
 \header {
   title = "Scotland The Brave"
   composer = "John McDermott"
-  arranger = "ar"
+  arranger = "Joschka Köster"
 }
 
 #(set-global-staff-size 22)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator

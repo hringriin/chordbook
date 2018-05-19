@@ -1,3 +1,4 @@
+% vim: ft=lilypond
 #(define (tie::tab-clear-tied-fret-numbers grob)
 
    (let* ((tied-fret-nr (ly:spanner-bound grob RIGHT)))

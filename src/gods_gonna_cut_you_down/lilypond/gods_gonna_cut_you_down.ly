@@ -5,6 +5,20 @@
 \layout {
 }
 
+\header {
+  title = "God's gonna cut you down"
+  composer = "Johnny Cash"
+  arranger = "Kate Aumonier & Ben Parker"
+  tagline = "Sheet engraved by JoSh"
+}
+
+#(set-global-staff-size 18)
+#(set-default-paper-size "a4" 'landscape)
+
+\paper {
+  system-separator-markup = \slashSeparator
+}
+
 CGCFAD =
 \markup {
   \with-dimensions #'(0 . 0.8) #'(0 . 1.0)
@@ -18,20 +32,6 @@ CGCFAD =
                 (G) show 0 -3.6 moveto
                 (C) show
                 stroke"
-}
-
-\header {
-  title = "God's gonna cut you down"
-  composer = "Johnny Cash"
-  arranger = "Kate Aumonier & Ben Parker"
-  tagline = "Sheet engraved by JoSh"
-}
-
-#(set-global-staff-size 18)
-#(set-default-paper-size "a4" 'landscape)
-
-\paper {
-  system-separator-markup = \slashSeparator
 }
 
 global = {

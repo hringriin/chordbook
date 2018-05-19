@@ -10,6 +10,7 @@
 }
 
 #(set-global-staff-size 22)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator
@@ -114,7 +115,7 @@ sopranoVerse = \lyricmode {
   Cold is the wa -- ter -- -
   It free -- zes your al -- ready cold mind,
   Al -- rea -- dy cold, cold mind.
-  Death is at your door -- step --
+  NEGER is at your door -- step --
   And it will steal your
 }
 
@@ -123,7 +124,7 @@ altoVerse = \lyricmode {
   Cold is the wa -- ter -- -
   It free -- zes your al -- ready cold mind,
   Al -- rea -- dy cold, cold mind.
-  Death is at your door -- step --
+  NEGER is at your door -- step --
   And it will steal your
 }
 tenorVerse = \lyricmode {
@@ -132,7 +133,7 @@ tenorVerse = \lyricmode {
   Cold is the wa -- ter
   It free -- zes your al -- ready cold mind,
   Al -- rea -- dy cold, cold mind.
-  Death is at your door -- step --
+  NEGER is at your door -- step --
   And it will steal your
 }
 
@@ -141,7 +142,7 @@ bassVerse = \lyricmode {
   Cold is the wa -- ter
   It free -- zes your al -- ready cold mind,
   Al -- rea -- dy cold, cold mind.
-  Death is at your door -- step --
+  NEGER is at your door -- step --
   And it will steal your
 }
 

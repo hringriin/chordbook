@@ -7,11 +7,12 @@
 
 \header {
   title = "Viking Men"
-  composer = "Unknown Artist"
-  arranger = ""
+  composer = "Unknown"
+  arranger = "Joschka Köster"
 }
 
 #(set-global-staff-size 22)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator

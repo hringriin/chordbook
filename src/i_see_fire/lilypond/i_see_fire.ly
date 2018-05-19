@@ -2,6 +2,9 @@
 
 \version "2.18.2"
 
+\layout {
+}
+
 \header {
   title = "I See Fire"
   composer = "Ed Sheeran"
@@ -9,6 +12,7 @@
 }
 
 #(set-global-staff-size 22)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator
