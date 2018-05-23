@@ -80,7 +80,7 @@ aFigureB = {
 guitarPartVoice = {
   \set fingeringOrientations = #'(up)
   \mark "Capo 4"
-  \unfoldRepeats {
+  %\unfoldRepeats {
     % takt 1 - 8 (9 - 16)
     \repeat volta 2 {
       \cFigureB
@@ -116,11 +116,11 @@ guitarPartVoice = {
     \gFigureC
     \cFigureA
 
-  }
+  %}
 }
 
 voicePart = {
-  \unfoldRepeats {
+  %\unfoldRepeats {
     \repeat volta 2 {
       % takt 1 - 7
       r1 r r r r r r
@@ -178,7 +178,7 @@ voicePart = {
 
     % takt 24
     d'2 r4. d'8
-  }
+  %}
 }
 
 voiceLyrics = \lyricmode {
@@ -240,18 +240,21 @@ voiceLyrics = \lyricmode {
     >>
   >>
   \layout {
-    %disable string numbers if manually specify string, e.g. e\6 (open low e string)
+    % disable string numbers if manually specify string, e.g. e\6 (open low e
+    % string)
     \omit Voice.StringNumber
   }
+}
+
+\score {
+  \unfoldRepeats <<
+    \context TabStaff = guitar {
+      \transpose d d' {
+        \guitarPartVoice
+      }
+    }
+  >>
   \midi {
-    \context {
-      \Staff
-      \remove "Staff_performer"
-    }
-    \context {
-      \Voice
-      \consists "Staff_performer"
-    }
     \tempo 4 = 200
   }
 }
