@@ -48,19 +48,68 @@ global = {
 guitarPartVoice = {
   \set fingeringOrientations = #'(up)
 
-  % takt 1 - 8 (9 - 16)
+  % takt 1 - 8
   \repeat volta 2 {
     <bflat,\5 d'\1>4^"capo 4" d8\4 f8\3 bflat,8\5 bflat8\2 f4\3
-    <f,\5 c'\2>4 bflat\2 a\2 f\3
+    <f,\6 c'\2>4 bflat\2 a\2 f\3
     <c\3 eflat'\1> g8\3 c'\2 c\3 eflat'\1 c'4\2
     <g,\5 d'\1>4 d\4 g\3 bflat\2
     <c\3 eflat'\1> g8\3 c'\2 c\3 eflat'\1 c'4\2
     <bflat,\5 d'\1>4 d\4 f\3 bflat\2
     <f,\6 c\4 f\3 a\2>4 g,\5 a,\5 g,\5
     <bflat,\5 d\4 f\3 bflat\2>2 \deadNotesOn <bflat,\5 d\4 f\3 bflat\2>2 \deadNotesOff
-
-    % takt 17
   }
+
+    % takt 9
+  <bflat,\5 d'\1>4 d8\4 f8\3 bflat,8\5 bflat8\2 f4\3
+  <f,\6 f'\1>4 c8\4 f\3 f,\6 c'\2 f4\3
+  <c\3 eflat'\1> g8\3 c'\2 c\3 eflat'\1 c'4\2
+  <g,\5 d'\1>4 d8\4 g\3 g,\5 bflat\2 g4\3
+  <c\3 eflat'\1> g8\3 c'\2 c\3 eflat'\1 c'4\2
+  <bflat,\5 d'\1>4 d8\4 f\3 bflat,\5 bflat\2 f4\3
+  <f,\6 f'\1>4 c8\4 f\3 f,\6 c'\2 f4\3
+  <bflat,\5 d'\1>4 d\4 f\3 bflat\2
+
+
+}
+
+voicePart = {
+  % takt 1 - 7
+  r1 r r r r r r
+
+  % takt 9
+  r2 r4 d'
+
+  % takt 10
+  d' d'8 d'4. d'4
+
+  % takt 11
+  d' d' d' d'
+
+  % takt 12
+  d' d'8 d'4. d'4
+
+  % takt 13
+  d' d' d' d'
+
+  % takt 14
+  d' d'8 d'4. d'4
+
+  % takt 15
+  d' d'2.
+
+  % takt 16
+  d'4 d' d' d'
+
+  % takt 17
+  d'2 r
+}
+
+voiceLyrics = \lyricmode {
+  Es ist ge -- leert das er -- ste Fass
+  kommt Brü -- der -- lein er -- zählt noch was
+  von Eu -- ren wei -- ten Rei -- sen
+  Sprecht und hebt das Glas.
 }
 
 guitarPartBass = {
@@ -71,6 +120,16 @@ guitarPartBass = {
   <<
     \new ChordNames {
     }
+
+    \new Staff <<
+      \global
+      \clef "G_8"
+      \set Staff.midiInstrument = #"acoustic grand"
+      \voicePart
+      \addlyrics {
+        \voiceLyrics
+      }
+    >>
 
     \new Staff <<
       \global
