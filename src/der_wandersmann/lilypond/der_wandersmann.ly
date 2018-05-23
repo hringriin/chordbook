@@ -1,4 +1,4 @@
-% vim: ft=lilypond:
+% vim: ft=lilypond
 \language "english"
 
 \version "2.18.2"
