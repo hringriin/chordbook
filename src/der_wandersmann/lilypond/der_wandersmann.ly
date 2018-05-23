@@ -23,7 +23,7 @@ DGCFAD =
 \markup {
   \with-dimensions #'(0 . 0.8) #'(0 . 1.0)
   \postscript #"/Arial-Bold findfont
-                1.3 scalefont
+                1.5 scalefont
                 setfont 0 3.6 moveto
                 (D) show 0 2.0 moveto
                 (A) show 0 0.6 moveto
@@ -45,31 +45,76 @@ global = {
   \mergeDifferentlyHeadedOn
 }
 
+cFigureA = {
+  <d,\5 fsharp\1>4 fsharp,4\4 a,4\3 d4\2
+}
+
+cFigureB = {
+  <d,\5 fsharp\1>4 fsharp,8\4 a,8\3 d,8\5 d8\2 a,4\3
+}
+
+dFigureA = {
+  <e,\4 g\1>4 b,8\3 e8\2 b,8\3 g8\1 e4\2
+}
+
+gFigureA = {
+  <a,,\6 e\2>4 d4\2 csharp4\2 a,4\3
+}
+
+gFigureB = {
+  <a,,\6 e,\4 a,\3 csharp\2>4 b,,4\5 csharp,4\5 b,,4\5
+}
+
+gFigureC = {
+  <a,,\6 a\1>4 e,8\4 a,8\3 a,,8\6 e8\2 a,4\3
+}
+
+aFigureA = {
+  <b,,\5 fsharp\1>4 fsharp,4\4 b,4\3 d4\2
+}
+
+aFigureB = {
+  <b,,\5 fsharp\1>4 fsharp,8\4 b,\3 b,,\5 d\2 b,4\3
+}
+
 guitarPartVoice = {
   \set fingeringOrientations = #'(up)
-
+  \mark "Capo 4"
   \unfoldRepeats {
-    % takt 1 - 8
+    % takt 1 - 8 (9 - 16)
     \repeat volta 2 {
-      <bflat,\5 d'\1>4^"capo 4" d8\4 f8\3 bflat,8\5 bflat8\2 f4\3
-      <f,\6 c'\2>4 bflat\2 a\2 f\3
-      <c\3 eflat'\1> g8\3 c'\2 c\3 eflat'\1 c'4\2
-      <g,\5 d'\1>4 d\4 g\3 bflat\2
-      <c\3 eflat'\1> g8\3 c'\2 c\3 eflat'\1 c'4\2
-      <bflat,\5 d'\1>4 d\4 f\3 bflat\2
-      <f,\6 c\4 f\3 a\2>4 g,\5 a,\5 g,\5
-      <bflat,\5 d\4 f\3 bflat\2>2 \deadNotesOn <bflat,\5 d\4 f\3 bflat\2>2 \deadNotesOff
+      \cFigureB
+      \gFigureA
+      \dFigureA
+      \aFigureA
+      \dFigureA
+      \cFigureA
+      \gFigureB
+
+    }
+    \alternative {
+      { <d,\5 fsharp,\4 a,\3 d\2>2 \deadNotesOn <d,\5 fsharp,\4 a,\3 d\2>2 \deadNotesOff }
     }
 
-    % takt 9
-    <bflat,\5 d'\1>4 d8\4 f8\3 bflat,8\5 bflat8\2 f4\3
-    <f,\6 f'\1>4 c8\4 f\3 f,\6 c'\2 f4\3
-    <c\3 eflat'\1> g8\3 c'\2 c\3 eflat'\1 c'4\2
-    <g,\5 d'\1>4 d8\4 g\3 g,\5 bflat\2 g4\3
-    <c\3 eflat'\1> g8\3 c'\2 c\3 eflat'\1 c'4\2
-    <bflat,\5 d'\1>4 d8\4 f\3 bflat,\5 bflat\2 f4\3
-    <f,\6 f'\1>4 c8\4 f\3 f,\6 c'\2 f4\3
-    <bflat,\5 d'\1>4 d\4 f\3 bflat\2
+    % takt 17
+    \cFigureB
+    \gFigureC
+    \dFigureA
+    \aFigureB
+    \dFigureA
+    \cFigureB
+    \gFigureC
+    \cFigureA
+
+    % takt 17
+    \cFigureB
+    \gFigureC
+    \dFigureA
+    \aFigureB
+    \dFigureA
+    \cFigureB
+    \gFigureC
+    \cFigureA
 
   }
 }
@@ -79,17 +124,18 @@ voicePart = {
     \repeat volta 2 {
       % takt 1 - 7
       r1 r r r r r r
-
-      % takt 8
-      r2 r4 d'
+    }
+    % takt 8
+    \alternative {
+        { r1 }
+        { r2 r4 fsharp' }
     }
 
-
     % takt 9
-    d' d'8 d'4. d'4
+    b' b'8 b'4. b'4
 
     % takt 10
-    d' d' d' d'
+    asharp' gsharp' fsharp'4. d'8
 
     % takt 11
     d' d'8 d'4. d'4
@@ -107,7 +153,31 @@ voicePart = {
     d'4 d' d' d'
 
     % takt 16
-    d'2 r
+    d'2 r4. d'8
+
+    % takt 17
+    d'4 d'8 d'4. d'4
+
+    % takt 18
+    d' d' d'2
+
+    % takt 19
+    d'4 d'8 d'8 d'4. d'4
+
+    % takt 20
+    d' d' d' d'
+
+    % takt 21
+    d' d'8 d'4. d'4
+
+    % takt 22
+    d' d'2.
+
+    % takt 23
+    d'4 d' d' d'
+
+    % takt 24
+    d'2 r4. d'8
   }
 }
 
@@ -116,20 +186,21 @@ voiceLyrics = \lyricmode {
   kommt Brü -- der -- lein er -- zählt noch was
   von Eu -- ren wei -- ten Rei -- sen
   Sprecht und hebt das Glas.
-}
 
-guitarPartBass = {
-  \set fingeringOrientations = #'(up)
+  Der al -- te bärt -- ge Wan -- ders -- mann
+  fängt mit der Ge -- schich -- te an
+  als einst von fern das Jagd -- horn schallt
+  und Jä -- ger hetz -- ten durch den Wald.
 }
 
 \score {
   <<
     \new ChordNames {
+
     }
 
     \new Staff <<
       \global
-      \clef "G_8"
       \set Staff.midiInstrument = #"electric grand"
       \voicePart
       \addlyrics {
@@ -145,12 +216,9 @@ guitarPartBass = {
       \new Voice = "first"
       {
         \voiceOne
-        \guitarPartVoice
-      }
-      \new Voice = "second"
-      {
-        \voiceTwo
-        \guitarPartBass
+        \transpose d d' {
+          \guitarPartVoice
+        }
       }
     >>
 
@@ -165,12 +233,9 @@ guitarPartBass = {
       \new TabVoice = "first"
       {
         \voiceOne
-        \guitarPartVoice
-      }
-      \new TabVoice= "second"
-      {
-        \voiceTwo
-        \guitarPartBass
+        \transpose d bflat {
+          \guitarPartVoice
+        }
       }
     >>
   >>
