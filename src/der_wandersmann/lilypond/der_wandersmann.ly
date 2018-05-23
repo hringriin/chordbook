@@ -1,4 +1,5 @@
 % vim: ft=lilypond:
+\language "english"
 
 \version "2.18.2"
 
@@ -49,14 +50,14 @@ guitarPartVoice = {
 
   % takt 1 - 8 (9 - 16)
   \repeat volta 2 {
-    <bes,\5 d'\1>4^"capo 4" d8\4 f8\3 bes,8\5 bes8\2 f4\3
-    <f,\5 c'\2>4 bes\2 a\2 f\3
-    <c\3 es'\1> g8\3 c'\2 c\3 es'\1 c'4\2
-    <g,\5 d'\1>4 d\4 g\3 bes\2
-    <c\3 es'\1> g8\3 c'\2 c\3 es'\1 c'4\2
-    <bes,\5 d'\1>4 d\4 f\3 bes\2
+    <bflat,\5 d'\1>4^"capo 4" d8\4 f8\3 bflat,8\5 bflat8\2 f4\3
+    <f,\5 c'\2>4 bflat\2 a\2 f\3
+    <c\3 eflat'\1> g8\3 c'\2 c\3 eflat'\1 c'4\2
+    <g,\5 d'\1>4 d\4 g\3 bflat\2
+    <c\3 eflat'\1> g8\3 c'\2 c\3 eflat'\1 c'4\2
+    <bflat,\5 d'\1>4 d\4 f\3 bflat\2
     <f,\6 c\4 f\3 a\2>4 g,\5 a,\5 g,\5
-    <bes,\5 d\4 f\3 bes\2>2 \deadNotesOn <bes,\5 d\4 f\3 bes\2>2 \deadNotesOff
+    <bflat,\5 d\4 f\3 bflat\2>2 \deadNotesOn <bflat,\5 d\4 f\3 bflat\2>2 \deadNotesOff
 
     % takt 17
   }
