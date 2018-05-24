@@ -2,8 +2,9 @@
 FILES=./*
 CPU_CORES=`cat /proc/cpuinfo | grep -m1 "cpu cores" | sed s/".*: "//`
 LILYPARAM := -ddelete-intermediate-files -dno-point-and-click -djob-count=$(CPU_CORES)
+THISFOLDER=../../../rehearsal_MIDI/`pwd | sed -e 's/.*src\///g' | cut -d '/' -f 1`
 
-all: compile movePDF moveMIDI
+all: compile movePDF moveMIDI extendedMIDI
 
 echooo:
 	@echo $(FILES)
@@ -17,6 +18,9 @@ movePDF:
 
 moveMIDI:
 	@if [ `ls -1 *.midi 2>/dev/null | wc -l` != 0 ] ; then if [ ! -d MIDI ] ; then mkdir MIDI ; fi ; mv *.midi MIDI/ ; fi
+
+extendedMIDI:
+	@mkdir -p $(THISFOLDER) ; cp -r MIDI/* ${THISFOLDER}
 
 purgeALL: purgePDF purgeMIDI
 
