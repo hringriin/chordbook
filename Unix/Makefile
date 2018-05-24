@@ -106,3 +106,14 @@ copyPDF:
 	@echo "+--------------------------------------+";
 	@sleep 2
 	cp -iv $(PDF) ../Chordbook/`date "+%Y-%m-%d_%H:%M:%S"`_$(PDF)
+
+publish:
+	@rm -rf ../PUBLISH
+	@echo "press any key to continue"
+	@read -e
+	@mkdir -p ../PUBLISH/rehearsal_MIDI
+	@cp -r ../rehearsal_MIDI/ ../PUBLISH/rehearsal_MIDI
+	@cp Chordbook.pdf Chordbook_Extended.pdf ../PUBLISH
+	@tar -zcvf Chordbook_EXTENDED.tar.gz ../PUBLISH/
+	@zip -r Chordbook_EXTENDED.zip ../PUBLISH
+	@mv Chordbook_EXTENDED.tar.gz Chordbook_EXTENDED.zip ..
