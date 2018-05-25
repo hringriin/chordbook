@@ -98,7 +98,7 @@ verseEnd = {
   <e,\4 b,\3 e\2 g\1>2--
   <e,\4 d\3 g\2 as\1>2--
   \arpeggioArrowUp
-  <e,\4 d\3 fs\2 b\1>2\arpeggio--
+  <a,\4 d\3 fs\2 b\1>2\arpeggio--
   \deadNotesOn
   <e,\4 b,\3 e\2 g\1>2--
   \deadNotesOff
