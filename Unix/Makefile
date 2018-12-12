@@ -50,27 +50,27 @@ document_extended:
 	@echo "|  Compiling 'EXTENDED Chordbook'  |";
 	@echo "+----------------------------------+";
 	@sleep 2
-	pdflatex $(FILENAME_EXTENDED).tex;
+	pdflatex -synctex=1 $(FILENAME_EXTENDED).tex;
 	@if(grep "citation" $(FILENAME_EXTENDED).aux > /dev/null); \
 		then \
 			bibtex $(FILENAME_EXTENDED); \
-			pdflatex $(FILENAME_EXTENDED).tex; \
+			pdflatex -synctex=1 $(FILENAME_EXTENDED).tex; \
 	fi;
 	
 	@if(grep "istfilename" $(FILENAME_EXTENDED).aux > /dev/null); \
 		then \
 			makeglossaries $(FILENAME_EXTENDED); \
-			pdflatex $(FILENAME_EXTENDED).tex; \
+			pdflatex -synctex=1 $(FILENAME_EXTENDED).tex; \
 			makeglossaries $(FILENAME_EXTENDED); \
 	fi;
 	
 	@if(grep "citation" $(FILENAME_EXTENDED).aux > /dev/null); \
 		then \
 			bibtex $(FILENAME_EXTENDED); \
-			pdflatex $(FILENAME_EXTENDED).tex; \
+			pdflatex -synctex=1 $(FILENAME_EXTENDED).tex; \
 	fi;
-	pdflatex $(FILENAME_EXTENDED).tex;
-	pdflatex $(FILENAME_EXTENDED).tex;
+	pdflatex -synctex=1 $(FILENAME_EXTENDED).tex;
+	pdflatex -synctex=1 $(FILENAME_EXTENDED).tex;
 
 document:
 	@clear
@@ -78,27 +78,27 @@ document:
 	@echo "|  Compiling 'Chordbook'  |";
 	@echo "+-------------------------+";
 	@sleep 2
-	pdflatex $(FILENAME).tex;
+	pdflatex -synctex=1 $(FILENAME).tex;
 	@if(grep "citation" $(FILENAME).aux > /dev/null); \
 		then \
 			bibtex $(FILENAME); \
-			pdflatex $(FILENAME).tex; \
+			pdflatex -synctex=1 $(FILENAME).tex; \
 	fi;
 	
 	@if(grep "istfilename" $(FILENAME).aux > /dev/null); \
 		then \
 			makeglossaries $(FILENAME); \
-			pdflatex $(FILENAME).tex; \
+			pdflatex -synctex=1 $(FILENAME).tex; \
 			makeglossaries $(FILENAME); \
 	fi;
 	
 	@if(grep "citation" $(FILENAME).aux > /dev/null); \
 		then \
 			bibtex $(FILENAME); \
-			pdflatex $(FILENAME).tex; \
+			pdflatex -synctex=1 $(FILENAME).tex; \
 	fi;
-	pdflatex $(FILENAME).tex;
-	pdflatex $(FILENAME).tex;
+	pdflatex -synctex=1 $(FILENAME).tex;
+	pdflatex -synctex=1 $(FILENAME).tex;
 
 copyPDF:
 	@echo "+--------------------------------------+";
