@@ -1,8 +1,9 @@
 % vim: ft=tex
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{chordbook}
-\LoadClass[12pt,a4paper,titlepage,twoside]{scrartcl}
+\ProvidesClass{../TeX/Chordbook/chordbook}
+%\LoadClass[12pt,a4paper,titlepage,twoside]{scrartcl}
+\LoadClass[12pt,landscape,a4paper,twoside]{article}
 
 \newcommand\myauthor{JoSh}
 \title{Chordbook}
