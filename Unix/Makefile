@@ -38,7 +38,7 @@ Detailed: lilypond
 	@printf "\n*** \033[0;32mCompiling \033[0;33mDetailed-$(FILENAME) \033[0;32mdone!\033[0m\n\n"
 
 lilypond:
-	@./bin/compileLily.bash
+	@../bin/compileLily.bash
 
 clean:
 	@-rm -v *.aux;
@@ -50,4 +50,4 @@ cleanAll: clean
 	@-rm -v Chordbook.pdf
 	@-rm -v Chordbook.synctex.gz
 	@-rm -vr REHEARSAL/
-	@./bin/cleanLily.bash
+	@../bin/cleanLily.bash
