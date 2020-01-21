@@ -7,3 +7,5 @@ Chordbook_EXTENDED.tar.gz
 Chordbook_EXTENDED.zip
 PUBLISH/
 *.synctex.gz
+*.pdf
+*.midi
