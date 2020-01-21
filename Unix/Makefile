@@ -1,119 +1,53 @@
-movepdf = yes
+FILENAME=Chordbook
+FILENAMEPATH=../TeX/Chordbook
+PDF=$(FILENAME).pdf
+LATEXSRC=../src/*/LaTeX/*.tex
+LILYPONDSRC=../src/*/lilypond/Makefile
 
-FILENAME=../TeX/Chordbook/Chordbook
-FILENAME_EXTENDED=../TeX/Chordbook_Extended/Chordbook_Extended
-PDF=Chordbook.pdf
+.PHONY: clean
 
-all: document clean
+LaTeX: $(FILENAME).pdf clean
+	@printf "\n*** \033[0;32mCompiling \033[0;33m$(FILENAME) \033[0;32mdone!\033[0m\n\n"
 
-extended: document lilypond document_extended clean
-
-clean:
-	@echo "+-------------------------------------------+";
-	@echo "|  Deleting temporary files - cleaning up!  |";
-	@echo "+-------------------------------------------+";
+$(FILENAME).pdf: $(FILENAMEPATH)/$(FILENAME).tex $(LATEXSRC)
+	@printf "\n*** \033[0;32mCompiling \033[0;33m$(FILENAME) \033[0;32m...\033[0m\n\n"
 	@sleep 2
-	rm -f *.aux;
-	rm -f *.bbl;
-	rm -f *.blg;
-	rm -f *.glg;
-	rm -f *.glo;
-	rm -f *.gls;
-	rm -f *.ist;
-	rm -f *.log;
-	rm -f *.mx1;
-	rm -f *.tdo;
-	rm -f *.toc;
-	rm -f *.out;
+	pdflatex -synctex=1 $(FILENAMEPATH)/$(FILENAME).tex;
+	@if(grep "citation" $(FILENAMEPATH)/$(FILENAME).aux > /dev/null); \
+		then \
+			bibtex $(FILENAMEPATH)/$(FILENAME); \
+			pdflatex -synctex=1 $(FILENAMEPATH)/$(FILENAME).tex; \
+	fi;
+	
+	@if(grep "istfilename" $(FILENAMEPATH)/$(FILENAME).aux > /dev/null); \
+		then \
+			makeglossaries $(FILENAMEPATH)/$(FILENAME); \
+			pdflatex -synctex=1 $(FILENAMEPATH)/$(FILENAME).tex; \
+			makeglossaries $(FILENAMEPATH)/$(FILENAME); \
+	fi;
+	
+	@if(grep "citation" $(FILENAMEPATH)/$(FILENAME).aux > /dev/null); \
+		then \
+			bibtex $(FILENAMEPATH)/$(FILENAME); \
+			pdflatex -synctex=1 $(FILENAMEPATH)/$(FILENAME).tex; \
+	fi;
+	pdflatex -synctex=1 $(FILENAMEPATH)/$(FILENAME).tex;
+	pdflatex -synctex=1 $(FILENAMEPATH)/$(FILENAME).tex;
 
-rmpdf:
-	@echo "+----------------+";
-	@echo "|  Deleting PDF  |";
-	@echo "+----------------+";
-	@sleep 2
-	rm -f $(PDF);
+Detailed: lilypond
+	@printf "\n*** \033[0;32mCompiling \033[0;33mDetailed-$(FILENAME) \033[0;32mdone!\033[0m\n\n"
 
 lilypond:
-	@echo "+-----------------------------------------------------+";
-	@echo "|  Compiling 'Lilypond' - This may take a long time!  |";
-	@echo "+-----------------------------------------------------+";
-	@sleep 2
-	$(MAKE) -C ../Templates/
+	@./bin/compileLily.bash
 
-# for server deploy
-server: document clean
-	cp -rf $(PDF) /var/www/archive.chordbook/LATEST_$(PDF)
-	cp -rf $(PDF) /var/www/archive.chordbook/`date "+%Y-%m-%d_%H:%M:%S"`_$(PDF)
+clean:
+	@-rm -v *.aux;
+	@-rm -v *.log;
+	@-rm -v *.toc;
+	@-rm -v *.out;
 
-document_extended:
-	@echo "+----------------------------------+";
-	@echo "|  Compiling 'EXTENDED Chordbook'  |";
-	@echo "+----------------------------------+";
-	@sleep 2
-	pdflatex -synctex=1 $(FILENAME_EXTENDED).tex;
-	@if(grep "citation" $(FILENAME_EXTENDED).aux > /dev/null); \
-		then \
-			bibtex $(FILENAME_EXTENDED); \
-			pdflatex -synctex=1 $(FILENAME_EXTENDED).tex; \
-	fi;
-	
-	@if(grep "istfilename" $(FILENAME_EXTENDED).aux > /dev/null); \
-		then \
-			makeglossaries $(FILENAME_EXTENDED); \
-			pdflatex -synctex=1 $(FILENAME_EXTENDED).tex; \
-			makeglossaries $(FILENAME_EXTENDED); \
-	fi;
-	
-	@if(grep "citation" $(FILENAME_EXTENDED).aux > /dev/null); \
-		then \
-			bibtex $(FILENAME_EXTENDED); \
-			pdflatex -synctex=1 $(FILENAME_EXTENDED).tex; \
-	fi;
-	pdflatex -synctex=1 $(FILENAME_EXTENDED).tex;
-	pdflatex -synctex=1 $(FILENAME_EXTENDED).tex;
-
-document:
-	@clear
-	@echo "+-------------------------+";
-	@echo "|  Compiling 'Chordbook'  |";
-	@echo "+-------------------------+";
-	@sleep 2
-	pdflatex -synctex=1 $(FILENAME).tex;
-	@if(grep "citation" $(FILENAME).aux > /dev/null); \
-		then \
-			bibtex $(FILENAME); \
-			pdflatex -synctex=1 $(FILENAME).tex; \
-	fi;
-	
-	@if(grep "istfilename" $(FILENAME).aux > /dev/null); \
-		then \
-			makeglossaries $(FILENAME); \
-			pdflatex -synctex=1 $(FILENAME).tex; \
-			makeglossaries $(FILENAME); \
-	fi;
-	
-	@if(grep "citation" $(FILENAME).aux > /dev/null); \
-		then \
-			bibtex $(FILENAME); \
-			pdflatex -synctex=1 $(FILENAME).tex; \
-	fi;
-	pdflatex -synctex=1 $(FILENAME).tex;
-	pdflatex -synctex=1 $(FILENAME).tex;
-
-copyPDF:
-	@echo "+--------------------------------------+";
-	@echo "|  Copying PDF and renaming properly!  |";
-	@echo "+--------------------------------------+";
-	@sleep 2
-	cp -iv $(PDF) ../Chordbook/`date "+%Y-%m-%d_%H:%M:%S"`_$(PDF)
-
-publish:
-	@rm -rf ../PUBLISH
-	@echo "press any key to continue"
-	@read -e
-	@mkdir -p ../PUBLISH/rehearsal_MIDI
-	@cp -r ../rehearsal_MIDI/ ../PUBLISH/rehearsal_MIDI
-	@cp Chordbook.pdf Chordbook_Extended.pdf ../PUBLISH
-	@tar -zcvf Chordbook_EXTENDED.tar.gz ../PUBLISH/
-	@zip -r Chordbook_EXTENDED.zip ../PUBLISH
-	@mv Chordbook_EXTENDED.tar.gz Chordbook_EXTENDED.zip ..
+cleanAll: clean
+	@-rm -v Chordbook.pdf
+	@-rm -v Chordbook.synctex.gz
+	@-rm -vr REHEARSAL/
+	@./bin/cleanLily.bash
