@@ -1,15 +1,17 @@
 % vim: set ft=lilypond
 \language "english"
 
-\version "2.18.2"
+\version "2.19.83"
 
 \layout {
 }
 
 \header {
   title = "Silent Night"
-  composer = "Darrell Braun"
-  arranger = "Darrell Braun"
+  composer = \markup { \bold {Music:} Franz Xaver Gruber}
+  arranger = \markup { \bold {Arrangement:} Darrell Braun}
+  instrument = "Guitar"
+  tagline = "Engraved with Lilypond - by Joschka Köster"
 }
 
 #(set-global-staff-size 22)
@@ -35,7 +37,7 @@ DGCFAD =
 }
 
 global = {
-  \key bf \major
+  \key a \major
   \numericTimeSignature
 
   \time 3/4
@@ -47,6 +49,7 @@ global = {
 
 guitarPart = {
   \set fingeringOrientations = #'(up)
+  \mark "Capo 4"
 
   % takt 1
   <f, c'>8 c f d' c' f
@@ -101,6 +104,25 @@ guitarPart = {
   <g, bf\3 d'\2 g'\1>\arpeggio f\4 bf\3 d'\2 g'\1 f\3
 
   % takt 18
+  <f\4 bf d' bf'>\arpeggio bf\3 <d' g'> bf\3 <b e'> g\3
+
+  % takt 19
+  <f, f c' f'>\arpeggio c f c' f' \glissando a'
+
+  % takt 20
+  <f, a'>8 c f a f c
+
+  % takt 21
+  <f, f c' f'>\arpeggio c c' c a c
+
+  % takt 22
+  <ff, c'>8 c g bf g c
+
+  % takt 23
+  <f, f> c f a f c
+
+  % takt 24
+  <c'\4 f'\3 a'\2>2.\flageolet\fermata
 }
 
 
@@ -109,16 +131,16 @@ guitarPart = {
     \new ChordNames {
     }
 
-    %\new Staff {
-      %\global
-      %\clef "G_8"
-      %\set midiInstrument = #"acoustic guitar (steel)"
-      %\guitarPart
-    %}
+    \new Staff {
+      \global
+      \clef "G_8"
+      \set midiInstrument = #"acoustic guitar (steel)"
+      \transpose g b { \guitarPart }
+    }
 
     \new TabStaff {
       \global
-      \set midiInstrument = #"acoustic guitar (steel)"
+      %\set midiInstrument = #"acoustic guitar (steel)"
       \set Staff.stringTunings = \stringTuning <d, g, c f a d'>
       \set TabStaff.instrumentName = \markup { " " \DGCFAD }
       \set TabStaff.shortInstrumentName = \markup \DGCFAD
