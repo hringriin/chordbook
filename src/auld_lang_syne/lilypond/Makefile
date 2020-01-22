@@ -1,5 +1,5 @@
 # the dir where the lilypond files are located
-FILENAME=davy-jones-theme
+FILENAME=auld_lang_syne
 REHEARSAL=../../../REHEARSAL
 ccred=$(echo -e "\033[0;31m")
 ccyellow=$(echo -e "\033[0;33m")

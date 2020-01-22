@@ -1,5 +1,5 @@
 # the dir where the lilypond files are located
-FILENAME=silent-night
+FILENAME=davy_jones_theme
 REHEARSAL=../../../REHEARSAL
 ccred=$(echo -e "\033[0;31m")
 ccyellow=$(echo -e "\033[0;33m")
