@@ -6,7 +6,7 @@
 #               E-Mail (work): jkoester@tzi.de                                  #
 #               E-Mail (priv): koester.joschka@gmail.com                        #
 # Date      :   2014-03-13                                                      #
-# Version   :   v1.0-4                                                          #
+# Version   :   v1.0-5                                                          #
 # Requires  :   dialog                                                          #
 # Category  :   Shell menu tools                                                #
 #################################################################################
@@ -36,6 +36,7 @@ _tmp1="/tmp/tmp1.$$"
 _tmp2="/tmp/tmp2.$$"
 _tmp3="/tmp/tmp3.$$"
 _tmp4="/tmp/tmp4.$$"
+_tmp5="/tmp/tmp5.$$"
 dialog 2>$_tmp1
 #dialog 2>$_tmp2
 DVER=`cat $_tmp1 | head -1`
@@ -254,7 +255,9 @@ function addSong()
             cp $_tmp4 ${lilypondFile}
 
             cd ${lilypondPath}
-            ln -s ../../../Templates/songMakefile Makefile
+            cp ../../../Templates/Makefile Makefile
+            sed 's/<FILENAME>/'"${filename}"'/g' Makefile > $_tmp5
+            cp $_tmp5 Makefile
             cd -
 
             cp ${templatePath}/gitignore-Template ${lilypondPath}/.gitignore
@@ -275,6 +278,7 @@ function cleanup()
     rm $_tmp2
     rm $_tmp3
     rm $_tmp4
+    rm $_tmp5
 
     unset version
     unset dialogtitle
@@ -285,6 +289,7 @@ function cleanup()
     unset _tmp2
     unset _tmp3
     unset _tmp4
+    unset _tmp5
     unset DVER
     unset esc
     unset response
