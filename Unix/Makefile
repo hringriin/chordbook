@@ -51,5 +51,5 @@ clean:
 cleanAll: clean
 	@-rm -v Chordbook.pdf
 	@-rm -v Chordbook.synctex.gz
-	@-rm -vr REHEARSAL/
+	@-rm -vr PUBLISH/REHEARSAL/
 	@../bin/cleanLily.bash

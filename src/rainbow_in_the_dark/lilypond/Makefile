@@ -1,6 +1,6 @@
 # the dir where the lilypond files are located
 FILENAME=rainbow_in_the_dark
-REHEARSAL=../../../REHEARSAL
+REHEARSAL=../../../PUBLISH/REHEARSAL
 ccred=$(echo -e "\033[0;31m")
 ccyellow=$(echo -e "\033[0;33m")
 ccgreen=$(echo -e "\033[0;32m")

@@ -1,6 +1,6 @@
 # the dir where the lilypond files are located
 FILENAME=the_green_fields_of_france
-REHEARSAL=../../../REHEARSAL
+REHEARSAL=../../../PUBLISH/REHEARSAL
 ccred=$(echo -e "\033[0;31m")
 ccyellow=$(echo -e "\033[0;33m")
 ccgreen=$(echo -e "\033[0;32m")
