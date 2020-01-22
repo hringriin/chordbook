@@ -6,6 +6,8 @@
 \layout {
 }
 
+% header {{{
+% ----------------------------------------
 \header {
   title = "Silent Night"
   composer = \markup { \bold {Music:} Franz Xaver Gruber}
@@ -20,6 +22,11 @@
 \paper {
   system-separator-markup = \slashSeparator
 }
+
+% ----------------------------------------
+% header }}}
+% guitar tuning {{{
+% ----------------------------------------
 
 DGCFAD =
 \markup {
@@ -36,6 +43,11 @@ DGCFAD =
                 stroke"
 }
 
+% ----------------------------------------
+% guitar tuning }}}
+% global settings {{{
+% ----------------------------------------
+
 global = {
   \key a \major
   \numericTimeSignature
@@ -46,6 +58,11 @@ global = {
   %\mergeDifferentlyDottedOn
   %\mergeDifferentlyHeadedOn
 }
+
+% ----------------------------------------
+% global settings }}}
+% guitar {{{
+% ----------------------------------------
 
 guitarPart = {
   \set fingeringOrientations = #'(up)
@@ -74,7 +91,7 @@ guitarPart = {
   <f, f'>8 c\4 f\3 c'\2 f'\1 f\3
 
   % takt 8
-  <f, c'>8 f\3 g,\5 f\3 bf,\5 c\4
+  <f, c'>8 f\3 g,\5 f\3 a,\5 c\4
 
   % takt 9
   <bf, f bf d'>8\arpeggio c\4 f bf d' f
@@ -125,42 +142,76 @@ guitarPart = {
   <c'\4 f'\3 a'\2>2.\flageolet\fermata
 }
 
+% ----------------------------------------
+% guitar }}}
+% pdf {{{
+% ----------------------------------------
 
-\score {
+\score
+{
   <<
-    \new ChordNames {
-    }
-
-    \new Staff {
+    \new Staff
+    <<
       \global
       \clef "G_8"
-      \set midiInstrument = #"acoustic guitar (steel)"
-      \transpose g b { \guitarPart }
-    }
 
-    \new TabStaff {
+      \new Voice = "first"
+      {
+        \voiceOne
+        \transpose g b
+        {
+          \guitarPart
+        }
+      }
+    >>
+
+    \new TabStaff
+    <<
       \global
-      %\set midiInstrument = #"acoustic guitar (steel)"
       \set Staff.stringTunings = \stringTuning <d, g, c f a d'>
       \set TabStaff.instrumentName = \markup { " " \DGCFAD }
       \set TabStaff.shortInstrumentName = \markup \DGCFAD
       \tabFullNotation
-      \guitarPart
-    }
+
+      \new TabVoice = "first"
+      {
+        \voiceOne
+        \guitarPart
+      }
+    >>
   >>
+
   \layout {
-    % disable string numbers if manually specify string, e.g. e\6 (open low e string)
+    % disable string numbers if manually specify string, e.g. e\6 (open low e
+    % string)
     \omit Voice.StringNumber
   }
-  \midi {
-    \context {
-      \Staff
-      \remove "Staff_performer"
+}
+
+% ----------------------------------------
+% pdf }}}
+% midi {{{
+% ----------------------------------------
+
+\score
+{
+  \unfoldRepeats
+  <<
+    \context TabStaff = guitar
+    {
+      \set Staff.midiInstrument = #"acoustic guitar (nylon)"
+        \transpose g b
+      {
+        \guitarPart
+      }
     }
-    \context {
-      \Voice
-      \consists "Staff_performer"
-    }
-    \tempo 4 = 140
+  >>
+
+  \midi
+  {
+    \tempo 4 = 90
   }
 }
+
+% ----------------------------------------
+% midi }}}
