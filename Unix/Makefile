@@ -41,10 +41,12 @@ lilypond:
 	@../bin/compileLily.bash
 
 clean:
+	@printf "\n*** \033[0;32mCleaning up \033[0;33m$(FILENAME) \033[0;32m...\033[0m\n\n"
 	@-rm -v *.aux;
 	@-rm -v *.log;
 	@-rm -v *.toc;
 	@-rm -v *.out;
+	@printf "\n*** \033[0;32mCleaning up \033[0;33m$(FILENAME) \033[0;32mdone!\033[0m\n\n"
 
 cleanAll: clean
 	@-rm -v Chordbook.pdf
