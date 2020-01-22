@@ -1,4 +1,5 @@
 % vim: set ft=lilypond
+\language "english"
 
 \version "2.18.2"
 
@@ -12,6 +13,7 @@
 }
 
 #(set-global-staff-size 22)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator
@@ -33,11 +35,11 @@ DGCFAD =
 }
 
 global = {
-  \key bes \major
+  \key bf \major
   \numericTimeSignature
 
   \time 3/4
-  %\tempo 4 = 140
+  \tempo 4 = 90
 
   %\mergeDifferentlyDottedOn
   %\mergeDifferentlyHeadedOn
@@ -60,7 +62,7 @@ guitarPart = {
 
   % takt 5
   \arpeggioArrowUp
-  <g, bes\3 d'\2 g'\1>\arpeggio f\4 bes\3 d'\2 g'\1 f\3
+  <g, bf\3 d'\2 g'\1>\arpeggio f\4 bf\3 d'\2 g'\1 f\3
 
   % takt 6
   <e, e'>8 c\4 g\3 c'\2 e'\1( f')
@@ -69,13 +71,13 @@ guitarPart = {
   <f, f'>8 c\4 f\3 c'\2 f'\1 f\3
 
   % takt 8
-  <f, c'>8 f\3 g,\5 f\3 bes,\5 c\4
+  <f, c'>8 f\3 g,\5 f\3 bf,\5 c\4
 
   % takt 9
-  <bes, f bes d'>8\arpeggio c\4 f bes d' f
+  <bf, f bf d'>8\arpeggio c\4 f bf d' f
 
   % takt 10
-  <d f bes f'>8\arpeggio f bes e' d' f
+  <d f bf f'>8\arpeggio f bf e' d' f
 
   % takt 11
   <f, c'>8 c f d' c' f
@@ -84,10 +86,10 @@ guitarPart = {
   <f, a>8 c f a f c
 
   % takt 13
-  <bes, f bes d'>8\arpeggio c\4 f bes d' f
+  <bf, f bf d'>8\arpeggio c\4 f bf d' f
 
   % takt 14
-  <d f bes f'>8\arpeggio f bes e' d' f
+  <d f bf f'>8\arpeggio f bf e' d' f
 
   % takt 15
   <f, c'>8 c f d' c' f
@@ -96,7 +98,7 @@ guitarPart = {
   <f, a>8 c f a f c
 
   % takt 17
-  <g, bes\3 d'\2 g'\1>\arpeggio f\4 bes\3 d'\2 g'\1 f\3
+  <g, bf\3 d'\2 g'\1>\arpeggio f\4 bf\3 d'\2 g'\1 f\3
 
   % takt 18
 }
@@ -107,16 +109,16 @@ guitarPart = {
     \new ChordNames {
     }
 
-    \new Staff {
-      \global
-      \clef "G_8"
-      \set midiInstrument = #"acoustic guitar (steel)"
-      \guitarPart
-    }
+    %\new Staff {
+      %\global
+      %\clef "G_8"
+      %\set midiInstrument = #"acoustic guitar (steel)"
+      %\guitarPart
+    %}
 
     \new TabStaff {
       \global
-      %\set midiInstrument = #"acoustic guitar (steel)"
+      \set midiInstrument = #"acoustic guitar (steel)"
       \set Staff.stringTunings = \stringTuning <d, g, c f a d'>
       \set TabStaff.instrumentName = \markup { " " \DGCFAD }
       \set TabStaff.shortInstrumentName = \markup \DGCFAD
