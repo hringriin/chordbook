@@ -2,8 +2,6 @@
 
 \documentclass[landscape]{../TeX/Chordbook/chordbook}
 
-% custom commands
-\input{../TeX/commands.tex}
 
 % having links in the document
 \usepackage[%
@@ -15,6 +13,16 @@
     %debug=true,
     hyperfigures=true%
     ]{hyperref}
+
+\usepackage[chorded]{songs}
+
+\setlength{\songnumwidth}{15mm}
+\setlength{\versenumwidth}{10mm}
+
+\renewcommand\printchord[1]{\sffamily\slshape\small#1}
+
+% custom commands
+\input{../TeX/commands.tex}
 
 \begin{document}
 
