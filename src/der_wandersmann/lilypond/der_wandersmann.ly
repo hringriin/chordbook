@@ -650,7 +650,7 @@ voiceLyrics = \lyricmode {
 
     \context Staff = thevoice
     {
-      \set Staff.midiInstrument = #"rock organ"
+      \set Staff.midiInstrument = #"bright acoustic"
       \transpose d d,
       {
         \voicePart
@@ -687,7 +687,7 @@ voiceLyrics = \lyricmode {
 
       \context Staff = thevoice
       {
-        \set Staff.midiInstrument = #"rock organ"
+        \set Staff.midiInstrument = #"bright acoustic"
         \transpose d d,
         {
           \voicePart
@@ -725,7 +725,7 @@ voiceLyrics = \lyricmode {
         \set Score.midiMaximumVolume = #0.4
         \set Staff.midiMinimumVolume = #0.8
         \set Staff.midiMaximumVolume = #1.0
-        \set Staff.midiInstrument = #"rock organ"
+        \set Staff.midiInstrument = #"bright acoustic"
         \transpose d d,
         {
           \voicePart
