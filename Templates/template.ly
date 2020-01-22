@@ -1,4 +1,6 @@
-% vim: set ft=lilypond
+% vim: ft=lilypond
+
+\language "english"
 
 \version "2.18.2"
 
@@ -18,7 +20,7 @@
 }
 
 global = {
-  %\key bes \major
+  %\key bf \major
   %\numericTimeSignature
 
   %\time 4/4
