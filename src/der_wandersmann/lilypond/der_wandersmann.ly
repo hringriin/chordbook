@@ -46,11 +46,11 @@ global = {
 }
 
 cFigureA = {
-  <d,\5 fsharp\1>4 fsharp,4\4 a,4\3 d4\2
+  <d,\5 fs\1>4 fs,4\4 a,4\3 d4\2
 }
 
 cFigureB = {
-  <d,\5 fsharp\1>4 fsharp,8\4 a,8\3 d,8\5 d8\2 a,4\3
+  <d,\5 fs\1>4 fs,8\4 a,8\3 d,8\5 d8\2 a,4\3
 }
 
 dFigureA = {
@@ -62,11 +62,11 @@ fFigureA = {
 }
 
 gFigureA = {
-  <a,,\6 e\2>4 d4\2 csharp4\2 a,4\3
+  <a,,\6 e\2>4 d4\2 cs4\2 a,4\3
 }
 
 gFigureB = {
-  <a,,\6 e,\4 a,\3 csharp\2>4 b,,4\5 csharp,4\5 b,,4\5
+  <a,,\6 e,\4 a,\3 cs\2>4 b,,4\5 cs,4\5 b,,4\5
 }
 
 gFigureC = {
@@ -74,11 +74,11 @@ gFigureC = {
 }
 
 aFigureA = {
-  <b,,\5 fsharp\1>4 fsharp,4\4 b,4\3 d4\2
+  <b,,\5 fs\1>4 fs,4\4 b,4\3 d4\2
 }
 
 aFigureB = {
-  <b,,\5 fsharp\1>4 fsharp,8\4 b,\3 b,,\5 d\2 b,4\3
+  <b,,\5 fs\1>4 fs,8\4 b,\3 b,,\5 d\2 b,4\3
 }
 
 % der hirsch drohte zu entkommen ...
@@ -160,8 +160,8 @@ guitarPartVoice = {
 
   }
   \alternative {
-    { <d,\5 fsharp,\4 a,\3 d\2>2 \deadNotesOn <d,\5 fsharp,\4 a,\3 d\2>2 \deadNotesOff }
-    { <d,\5 fsharp,\4 a,\3 d\2>2 \deadNotesOn <d,\5 fsharp,\4 a,\3 d\2>2 \deadNotesOff }
+    { <d,\5 fs,\4 a,\3 d\2>2 \deadNotesOn <d,\5 fs,\4 a,\3 d\2>2 \deadNotesOff }
+    { <d,\5 fs,\4 a,\3 d\2>2 \deadNotesOn <d,\5 fs,\4 a,\3 d\2>2 \deadNotesOff }
   }
 
   % takt 9
@@ -619,7 +619,7 @@ voiceLyrics = \lyricmode {
       \new TabVoice = "first"
       {
         \voiceOne
-        \transpose d bflat
+        \transpose d bf
         {
           \guitarPartVoice
         }
