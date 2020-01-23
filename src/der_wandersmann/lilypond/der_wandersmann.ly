@@ -1,10 +1,10 @@
 % vim: ft=lilypond
 \language "english"
 
-\version "2.18.2"
+\version "2.19.83"
 
-%\layout {
-%}
+% header {{{
+% ----------------------------------------
 
 \header {
   title = "Der Wandersmann"
@@ -19,6 +19,11 @@
 \paper {
   system-separator-markup = \slashSeparator
 }
+
+% ----------------------------------------
+% header }}}
+% guitar tuning {{{
+% ----------------------------------------
 
 DGCFAD =
 \markup {
@@ -35,6 +40,11 @@ DGCFAD =
     stroke"
 }
 
+% ----------------------------------------
+% guitar tuning }}}
+% global settings {{{
+% ----------------------------------------
+
 global = {
   \key d \major
   \numericTimeSignature
@@ -45,6 +55,12 @@ global = {
   \mergeDifferentlyDottedOn
   \mergeDifferentlyHeadedOn
 }
+
+% ----------------------------------------
+% global settings }}}
+
+% figures {{{
+% ----------------------------------------
 
 cFigureA = {
   <d,\5 fs\1>4 fs,4\4 a,4\3 d4\2
@@ -144,6 +160,11 @@ guitarWine = {
     }
   }
 }
+
+% ----------------------------------------
+% figures }}}
+% guitarPart Voice {{{
+% ----------------------------------------
 
 guitarPartVoice = {
   \set fingeringOrientations = #'(up)
@@ -269,6 +290,11 @@ guitarPartVoice = {
 
   \guitarWine
 }
+
+% ----------------------------------------
+% guitarPart voice }}}
+% voicePart {{{
+% ----------------------------------------
 
 voicePart = {
   \repeat volta 2 {
@@ -512,6 +538,11 @@ voicePart = {
   }
 }
 
+% ----------------------------------------
+% voicePart }}}
+% lyrics {{{
+% ----------------------------------------
+
 voiceLyrics = \lyricmode {
   Es ist ge -- leert das er -- ste Fass,
   kommt Brü -- der -- lein er -- zählt noch was
@@ -586,7 +617,12 @@ voiceLyrics = \lyricmode {
   Hoch die Krü -- ge trin __ ken __ wir!
 }
 
-% pdf
+% ----------------------------------------
+% lyrics }}}
+
+% pdf {{{
+% ----------------------------------------
+
 \score
 {
   <<
@@ -642,7 +678,11 @@ voiceLyrics = \lyricmode {
   }
 }
 
-% midi
+% ----------------------------------------
+% pdf }}}
+% midi {{{
+% ----------------------------------------
+
 \score
 {
   \unfoldRepeats
@@ -672,7 +712,10 @@ voiceLyrics = \lyricmode {
   }
 }
 
-% rehearsal guitar
+
+% rehearsal guitar {{{
+% ----------------------------------------
+
 \book {
   \bookOutputSuffix "guitar"
   \score
@@ -710,7 +753,11 @@ voiceLyrics = \lyricmode {
   }
 }
 
-% rehearsal voice
+% ----------------------------------------
+% rehearsal guitar }}}
+% rehearsal voice {{{
+% ----------------------------------------
+
 \book {
   \bookOutputSuffix "voice"
   \score
@@ -747,3 +794,9 @@ voiceLyrics = \lyricmode {
     }
   }
 }
+
+% ----------------------------------------
+% rehearsal Voice }}}
+
+% ----------------------------------------
+% midi }}}
