@@ -3,17 +3,18 @@
 
 \version "2.18.2"
 
-\layout {
-}
+%\layout {
+%}
 
 \header {
   title = "Der Wandersmann"
-  composer = "Schandmaul"
-  arranger = "Arr.: Joschka Köster"
+  composer = \markup { \bold {Music:} Schandmaul}
+  arranger = \markup { \bold {Arrangement:} Joschka Köster}
+  tagline = "Engraved with Lilypond - by Joschka Köster"
 }
 
 #(set-global-staff-size 22)
-#(set-default-paper-size "a4" 'landscape)
+#(set-default-paper-size "a4landscape")
 
 \paper {
   system-separator-markup = \slashSeparator
@@ -307,7 +308,7 @@ voicePart = {
   d' d' d' r8
 
   % der hirsch drohte zu entkom--
-  e'8 g'4 g' g'8 g'4 fs'8
+  e'8 g'4 g'8 g'8 g' g'4 fs'8
   % --men Doch ...
   fs'2 r4. fs'8
   % rannte ich schneller als
@@ -488,23 +489,25 @@ voicePart = {
 
   \repeat volta 4 {
     % es fliesst der wein es
-    fs' a'8 a'4. a'4
+    a' a'8 a'4. a'4
     % fliesst das bier
-    fs' a'8 a'2 r8
+    a' a'8 a'2 r8
   }
   \alternative{
     {
       % hoch die kruege
       b'4 d''8 d''4. d''4
       % trinken wir
-      cs'' a' a' a'
+      cs'' a' a'4. a'8
     }
     {
       % hoch die kruege
-      b'4^"ritardando _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" d''4 d''4 d''4
+      %b'4^"ritardando _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" d''4 d''4 d''4
+      \override TextSpanner.bound-details.left.text = \markup { \upright "rit." }
+      b'4\startTextSpan d''4 d''4 d''4
       % triiinnkeeeennn wiiiiiiiiiir :-)
-      cs''4 d'' e'' d''
-      d''1~d''1\fermata
+      cs''4 (d'') e'' (d'')
+      d''1\stopTextSpan~d''1\fermata
     }
   }
 }
@@ -520,7 +523,7 @@ voiceLyrics = \lyricmode {
   als einst von fern das Jagd -- horn schallt
   und Jä -- ger hetz -- ten durch den Wald.
 
-  Der Hirsch drohte zu ent -- kom -- men,
+  Der Hirsch droh -- te zu ent -- kom -- men,
   doch rannte ich schnel -- ler als das Tier,
   mit blo -- ßer Faust nie -- der -- ge -- run -- gen;
   das Ge -- weih hier als Be -- weis da -- für!
@@ -577,6 +580,10 @@ voiceLyrics = \lyricmode {
 
   Es fließt der Wein, es fließt das Bier!
   Hoch die Krü -- ge trin -- ken wir!
+
+  Es
+
+  Hoch die Krü -- ge trin __ ken __ wir!
 }
 
 % pdf
@@ -631,6 +638,7 @@ voiceLyrics = \lyricmode {
     % disable string numbers if manually specify string, e.g. e\6 (open low e
     % string)
     \omit Voice.StringNumber
+    \override LyricSpace.minimum-distance = #2.0
   }
 }
 
