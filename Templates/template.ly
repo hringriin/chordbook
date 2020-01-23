@@ -2,72 +2,143 @@
 
 \language "english"
 
-\version "2.18.2"
+\version "2.19.83"
 
 \layout {
 }
 
+% header {{{
+% ----------------------------------------
+
 \header {
   title = "<SONGTITLE>"
-  composer = "<ARTIST>"
-  arranger = "<ARRANGER>"
+  composer = \markup { \bold {Music:} <ARTIST>}
+  arranger = \markup { \bold {Arrangement:} <ARRANGER>}
+  instrument = "Guitar"
+  tagline = "Engraved with Lilypond - by Joschka Köster"
 }
 
 #(set-global-staff-size 22)
+#(set-default-paper-size "a4" 'landscape)
 
 \paper {
   system-separator-markup = \slashSeparator
 }
 
-global = {
-  %\key bf \major
-  %\numericTimeSignature
+% ----------------------------------------
+% header }}}
+% guitar tuning {{{
+% ----------------------------------------
 
-  %\time 4/4
-  %\tempo 4 = 140
+DGCFAD =
+\markup {
+  \with-dimensions #'(0 . 0.8) #'(0 . 1.0)
+  \postscript #"/Arial-Bold findfont
+                1.3 scalefont
+                setfont 0 3.6 moveto
+                (D) show 0 2.0 moveto
+                (A) show 0 0.6 moveto
+                (F) show 0 -0.8 moveto
+                (C) show 0 -2.2 moveto
+                (G) show 0 -3.6 moveto
+                (D) show
+                stroke"
+}
+
+% ----------------------------------------
+% guitar tuning }}}
+% global settings {{{
+% ----------------------------------------
+
+global = {
+  \key a \major
+  \numericTimeSignature
+
+  \time 3/4
+  \tempo 4 = 90
 
   %\mergeDifferentlyDottedOn
   %\mergeDifferentlyHeadedOn
 }
 
+% ----------------------------------------
+% global settings }}}
+% guitarPart {{{
+% ----------------------------------------
 guitarPart = {
   \set fingeringOrientations = #'(up)
 }
 
+% ----------------------------------------
+% guitarPart }}}
+% pdf {{{
+% ----------------------------------------
 
-\score {
+\score
+{
   <<
-    \new ChordNames {
-    }
-
-    \new Staff {
+    \new Staff
+    <<
       \global
       \clef "G_8"
-      \set midiInstrument = #"acoustic guitar (steel)"
-      \guitarPart
-    }
 
-    \new TabStaff {
+      \new Voice = "first"
+      {
+        \voiceOne
+        \transpose g b
+        {
+          \guitarPart
+        }
+      }
+    >>
+
+    \new TabStaff
+    <<
       \global
-      %\set midiInstrument = #"acoustic guitar (steel)"
-      \set Staff.stringTunings = \stringTuning <c, g, c f a d'>
+      \set Staff.stringTunings = \stringTuning <d, g, c f a d'>
+      \set TabStaff.instrumentName = \markup { " " \DGCFAD }
+      \set TabStaff.shortInstrumentName = \markup \DGCFAD
       \tabFullNotation
-      \guitarPart
-    }
+
+      \new TabVoice = "first"
+      {
+        \voiceOne
+        \guitarPart
+      }
+    >>
   >>
+
   \layout {
-    % disable string numbers if manually specify string, e.g. e\6 (open low e string)
+    % disable string numbers if manually specify string, e.g. e\6 (open low e
+    % string)
     \omit Voice.StringNumber
   }
-  \midi {
-    \context {
-      \Staff
-      \remove "Staff_performer"
+}
+
+% ----------------------------------------
+% pdf }}}
+% midi {{{
+% ----------------------------------------
+
+\score
+{
+  \unfoldRepeats
+  <<
+    \context TabStaff = guitar
+    {
+      \set Staff.midiInstrument = #"acoustic guitar (nylon)"
+        \transpose g b
+      {
+        \guitarPart
+      }
     }
-    \context {
-      \Voice
-      \consists "Staff_performer"
-    }
-    \tempo 4 = 140
+  >>
+
+  \midi
+  {
+    \tempo 4 = 90
   }
 }
+
+% ----------------------------------------
+% midi }}}
