@@ -8,26 +8,24 @@ ccend=$(echo -e "\033[0m")
 
 
 CPU_CORES=`cat /proc/cpuinfo | grep -m1 "cpu cores" | sed s/".*: "//`
-LILYPARAM := -ddelete-intermediate-files -dno-point-and-click -djob-count=$(CPU_CORES) -o $(FILENAME).ly
+LILYPARAM := -ddelete-intermediate-files -dno-point-and-click -djob-count=$(CPU_CORES) -o $(FILENAME)_ly
 
 .PHONY: clean
 
-all: $(FILENAME).ly.pdf PDF/$(FILENAME).ly.pdf MIDI/$(FILENAME).ly.midi $(REHEARSAL)/$(FILENAME)/$(FILENAME).ly.midi
+all: $(FILENAME)_ly.pdf $(REHEARSAL)/$(FILENAME)/$(FILENAME)_ly.pdf $(REHEARSAL)/$(FILENAME)/$(FILENAME)_ly.midi
 	@printf "\n>>> \033[0;32mCompiling: \033[0;33m$(FILENAME) \033[0;32mdone!\033[0m\n\n"
 
-$(FILENAME).ly.pdf: $(FILENAME).ly
+$(FILENAME)_ly.pdf: $(FILENAME).ly
 	@printf "\n>>> \033[0;32mCompiling: \033[0;33m$(FILENAME) \033[0;32m...\033[0m\n\n"
 	lilypond $(LILYPARAM) $(FILENAME).ly
 
-PDF/$(FILENAME).ly.pdf: $(FILENAME).ly.pdf
-	@if [ ! -d PDF ] ; then mkdir PDF ; fi ; cp -v *.pdf PDF/
-
-MIDI/$(FILENAME).ly.midi: $(FILENAME).ly.midi
-	@if [ `ls -1 *.midi 2>/dev/null | wc -l` != 0 ] ; then if [ ! -d MIDI ] ; then mkdir MIDI ; fi ; cp -v *.midi MIDI/ ; fi
-
-$(REHEARSAL)/$(FILENAME)/$(FILENAME).ly.midi: MIDI/$(FILENAME).ly.midi
+$(REHEARSAL)/$(FILENAME)/$(FILENAME)_ly.pdf: $(FILENAME)_ly.pdf
 	@if [ ! -d $(REHEARSAL)/$(FILENAME) ] ; then mkdir -p $(REHEARSAL)/$(FILENAME) ; fi
-	@cp -rv MIDI/* $(REHEARSAL)/$(FILENAME)/
+	@cp -rv *.pdf $(REHEARSAL)/$(FILENAME)/
+
+$(REHEARSAL)/$(FILENAME)/$(FILENAME)_ly.midi: $(FILENAME)_ly.midi
+	@if [ ! -d $(REHEARSAL)/$(FILENAME) ] ; then mkdir -p $(REHEARSAL)/$(FILENAME) ; fi
+	@cp -rv *.midi $(REHEARSAL)/$(FILENAME)/
 
 clean:
 	@printf "\n>>> \033[0;32mCleaning up: \033[0;33m$(FILENAME) \033[0;32m...\033[0m\n\n"
