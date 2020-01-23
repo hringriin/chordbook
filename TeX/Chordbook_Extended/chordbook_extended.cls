@@ -18,8 +18,6 @@
 
 %\newcommand\incls[1]{\input{input/{#1}} \sclearpage}
 
-\RequirePackage[chorded]{songs}
-\RequirePackage{caption}
 
 % Sprachpaket
 \RequirePackage[ngerman]{babel}
@@ -53,7 +51,6 @@
 \setlength{\songnumwidth}{15mm}
 \setlength{\versenumwidth}{10mm}
 
-\renewcommand\printchord[1]{\sffamily\slshape\small#1}
 
 \newcommand\chordbrk{\hspace*{6.2mm}}
 
