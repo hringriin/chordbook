@@ -1,4 +1,5 @@
 % vim: set ft=lilypond
+
 \language "english"
 
 \version "2.19.83"
@@ -17,7 +18,7 @@
 }
 
 #(set-global-staff-size 22)
-#(set-default-paper-size "a4" 'landscape)
+#(set-default-paper-size "a4landscape")
 
 \paper {
   system-separator-markup = \slashSeparator
@@ -61,7 +62,7 @@ global = {
 
 % ----------------------------------------
 % global settings }}}
-% guitar {{{
+% guitarPart {{{
 % ----------------------------------------
 
 guitarPart = {
@@ -143,7 +144,7 @@ guitarPart = {
 }
 
 % ----------------------------------------
-% guitar }}}
+% guitarPart }}}
 % pdf {{{
 % ----------------------------------------
 
