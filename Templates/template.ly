@@ -19,7 +19,7 @@
 }
 
 #(set-global-staff-size 22)
-#(set-default-paper-size "a4" 'landscape)
+#(set-default-paper-size "a4landscape")
 
 \paper {
   system-separator-markup = \slashSeparator
@@ -112,6 +112,7 @@ guitarPart = {
     % disable string numbers if manually specify string, e.g. e\6 (open low e
     % string)
     \omit Voice.StringNumber
+    \override LyricSpace.minimum-distance = #2.0
   }
 }
 
