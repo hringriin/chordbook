@@ -4,7 +4,7 @@ FILENAMEEXTENDED=Chordbook_Extended
 FILENAMEPATHEXTENDED=../TeX/Chordbook_Extended
 PDF=$(FILENAME).pdf
 LATEXSRC=../src/*/LaTeX/*.tex
-PDFSRC=../src/*/lilypond/PDF/*.pdf
+PDFSRC= ../PUBLISH/REHEARSAL/*/*.pdf
 
 .PHONY: clean
 
@@ -66,6 +66,9 @@ $(FILENAMEEXTENDED).pdf: $(FILENAMEPATHEXTENDED)/$(FILENAMEEXTENDED).tex $(PDFSR
 
 lilypond:
 	@../bin/compileLily.bash
+
+makefiles:
+	@../bin/makefiles.bash
 
 clean:
 	@printf "\n*** \033[0;32mCleaning up \033[0;33m$(FILENAME) \033[0;32m...\033[0m\n\n"
