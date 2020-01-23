@@ -36,7 +36,7 @@ $(FILENAME).pdf: $(FILENAMEPATH)/$(FILENAME).tex $(LATEXSRC)
 	pdflatex -synctex=1 $(FILENAMEPATH)/$(FILENAME).tex;
 	pdflatex -synctex=1 $(FILENAMEPATH)/$(FILENAME).tex;
 
-Music: lilypond $(FILENAMEEXTENDED).pdf clean
+music: $(FILENAMEEXTENDED).pdf clean
 	@printf "\n*** \033[0;32mCompiling \033[0;33mDetailed-$(FILENAME) \033[0;32mdone!\033[0m\n\n"
 
 $(FILENAMEEXTENDED).pdf: $(FILENAMEPATHEXTENDED)/$(FILENAMEEXTENDED).tex $(PDFSRC)
@@ -70,13 +70,24 @@ lilypond:
 makefiles:
 	@../bin/makefiles.bash
 
+help:
+	@printf "\nHow to compiles this document:\n"
+	@printf "==============================\n\n"
+	@printf "Run    'make'              to compile chordbook.\n"
+	@printf "Run    'make lilypond'     to compile all the lilypond files (needed for the Extended Chordbook).\n"
+	@printf "Run    'make music'        to compile the Extended Chordbook.\n"
+	@printf "Run    'make clean'        to clean up unnecessary files.\n"
+	@printf "Run    'make cleanAll'     to start over new.\n\n\n"
+	@printf "'make lilypond' will create a folder called 'PUBLISH' in the root directory of this repository and within this folder a folder called 'REHEARSAL'. All the PDFs and MIDI files of each song are stored in this folder.\n"
+	@printf "'make music' will need and use these documents to create the Extended Chordbook.\n"
+
 clean:
-	@printf "\n*** \033[0;32mCleaning up \033[0;33m$(FILENAME) \033[0;32m...\033[0m\n\n"
+	@printf "\n*** \033[0;32mCleaning up ...\033[0m\n\n"
 	@-rm -v *.aux;
 	@-rm -v *.log;
 	@-rm -v *.toc;
 	@-rm -v *.out;
-	@printf "\n*** \033[0;32mCleaning up \033[0;33m$(FILENAME) \033[0;32mdone!\033[0m\n\n"
+	@printf "\n*** \033[0;32mCleaning up done!\033[0m\n\n"
 
 cleanAll: clean
 	@-rm -v $(FILENAME).pdf
