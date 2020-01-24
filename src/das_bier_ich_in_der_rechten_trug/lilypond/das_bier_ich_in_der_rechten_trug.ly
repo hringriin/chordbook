@@ -101,6 +101,43 @@ intro = {
   \dFigureB
 }
 
+refrain = {
+  <g,\6 b,\5 d\4 g\3 d'\2 g'\1>8.
+  <g,\6 b,\5 d\4 g\3 d'\2 g'\1>16
+  <g,\6 b,\5 d\4 g\3 d'\2 g'\1>
+  <g,\6 b,\5 d\4 g\3 d'\2 g'\1>
+  <g,\6 b,\5 d\4 g\3 d'\2 g'\1>8.
+  <g,\6 b,\5 d\4 g\3 d'\2 g'\1>16
+  <g,\6 b,\5 d\4 g\3 d'\2 g'\1>
+  <g,\6 b,\5 d\4 g\3 d'\2 g'\1>
+
+  <a,\5 e\4 a\3 cs'\2 e'\1>8.
+  <a,\5 e\4 a\3 cs'\2 e'\1>16
+  <a,\5 e\4 a\3 cs'\2 e'\1>
+  <a,\5 e\4 a\3 cs'\2 e'\1>
+  <a,\5 e\4 a\3 cs'\2 e'\1>8.
+  <a,\5 e\4 a\3 cs'\2 e'\1>16
+  <a,\5 e\4 a\3 cs'\2 e'\1>
+  <a,\5 e\4 a\3 cs'\2 e'\1>
+
+  <d\4 a\3 d'\2 fs'\1>8.
+  <d\4 a\3 d'\2 fs'\1>16
+  <d\4 a\3 d'\2 fs'\1>
+  <d\4 a\3 d'\2 fs'\1>
+  <a,\5 e\4 a\3 cs'\2 e'\1>8.
+  <a,\5 e\4 a\3 cs'\2 e'\1>16
+  <a,\5 e\4 a\3 cs'\2 e'\1>
+  <a,\5 e\4 a\3 cs'\2 e'\1>
+
+  <b,\5 fs\4 b\3 d'\2 fs'\1>2.
+
+  g,8\6 d\4 g\3 <d'\2 g'\1> g\3 d\4
+  b,\5 fs\4 b\3 <d'\2 fs'\1> b\3 fs\4
+  a,\5 e\4 <a\3 cs'\2>
+  g,\6 d\4 <g\3 b\2>
+  \dFigureB
+}
+
 vers = {
   \dFigureA
   \aFigureA
@@ -118,6 +155,139 @@ vers = {
   \dFigureB
 }
 
+voiceVerseA = {
+  % ich ...
+  r4 r r8 d8
+  % schlenderte gemach
+  fs4 fs8 fs4 fs8
+  % versonnen
+  fs (e) e e fs4
+  % aus der schenken
+  d4 d8 d4 b,8
+  % tür ... mit
+  d4. r4 fs8
+  % armen voller
+  a4 a8 a a4
+  % freuden wonnen
+  b4 a8 fs e4
+  % lag die nacht vor
+  g4 fs8 d4 b,8
+  % mir ... in
+  d4. r4 d8
+  % meinem mund ein
+  fs4 fs8 a4 fs8
+  % peifchen hing im
+  e4 e8 a4 e8
+  % linken arm ein
+  d4 d8 g4 d8
+  % mägdlein ging in
+  b,4 cs8 d4 d8
+  % rechter hand ein
+  fs4 fs8 a4 fs8
+  % krug voll bier so
+  e4 e8 a4 e8
+  % wandelten hin-
+  d4 b,8 cs4 e8
+  % -aus wir vier
+  e (d) cs d4 r8
+}
+
+voiceVerseB = {
+  % ich ...
+  r4 r r8 d8
+  % stützte mich mit
+  fs4 fs8 fs4 fs8
+  % linker Hand und
+  fs (e) e e4 fs8
+  % warf mich hoch em-
+  d4 d8 d4 b,8
+  % -por ... und
+  d4. r4 fs8
+  % zog dabei nicht
+  a4 a8 a4 a8
+  % grad galant am
+  b4 a8 g (fs) fs
+  % Haar das Mägdlein
+  g4 fs8 d4 b,8
+  % vor ... Ich
+  d4. r4 d8
+  % trat mit meinem
+  fs4 fs8 a4 fs8
+  % Fuß die Pfeif die
+  e4 e8 a4 e8
+  % flog in einnem
+  d4 d8 g4 d8
+  % Funkenreif hin
+  b,4 cs8 d4 d8
+  % hinweg der Magd die
+  fs4 fs8 a4 fs8
+  % grad nach vorn wie
+  e4 e8 a4 e8
+  % ich erneut den
+  d4 b,8 cs4 e8
+  % Halt verlor'n
+  e (d) cs d4 r8
+}
+
+voiceVerseC = {
+  % ich ...
+  r4 r r8 d8
+  % warf mich also
+  fs4 fs8 fs4 fs8
+  % auf den rücken
+  fs (e) e e fs4
+  % und mit linker
+  d4 d8 d4 b,8
+  % hand und knie tat
+  d4 e8 d4 fs8
+  % ich sie wuchtig
+  a4 a8 a a4
+  % von mir drücken
+  b4 a8 fs e4
+  % dass sie rittlings
+  g4 fs8 d4 b,8
+  % fiel und schrie grad
+  d4 e8 d4 e8
+  % noch erreichte
+  fs4 fs8 a4 fs8
+  % denn mein schuh das
+  e4 e8 a4 e8
+  % preifchen und ich
+  d4 d8 g4 d8
+  % trat schnell zu so
+  b,4 cs8 d4 d8
+  % sauste sie er-
+  fs4 fs8 a4 fs8
+  % -neut hin weg dem
+  e4 e8 a4 e8
+  % weib sich nähernd
+  d4 b,8 cs4 e8
+  % straßendreck
+  e (d) cs d4 r8
+}
+
+refrainVerse = {
+  % die
+  r4 r r8 g8
+  % welt sie hielt den 
+  b4 b8 b4 b8
+  % atem an die
+  b8 (a) a a (g) g
+  % zeit stand stockend
+  fs4 a8 fs e4
+  % still ... und
+  d4. r4 d8
+  % ich ersann was
+  g4 g8 g4 g8
+  % ich noch retten
+  fs4 e8 d8 fs4
+  % kann und retten
+  e4 e8 d b,4
+  % will ...
+  d4. r8 r4
+
+}
+
 % ----------------------------------------
 % figures }}}
 % guitarPart Voice {{{
@@ -131,10 +301,27 @@ guitarPartVoice = {
   \partial 4 d'8\2 e'\1
 
   % takt 1
-  \intro
+  \intro \bar "||" \break
 
   \vers
   \vers
+
+  \refrain \bar "||" \break
+
+  \vers
+  \vers
+
+  \refrain \bar "||" \break
+
+  \vers
+  \vers
+
+  \refrain \bar "||" \break
+
+  \vers
+  \vers
+
+  \refrain \bar "|."
 }
 
 % ----------------------------------------
@@ -143,6 +330,35 @@ guitarPartVoice = {
 % ----------------------------------------
 
 voicePart = {
+  r4
+  r2.
+  r2.
+  r2.
+  r2.
+  r2.
+  r2.
+  r2.
+  r2.
+
+  \voiceVerseA
+  \voiceVerseA
+
+  \refrainVerse
+
+  \voiceVerseB
+  \voiceVerseC
+
+  \refrainVerse
+
+  \voiceVerseC
+  \voiceVerseC
+
+  \refrainVerse
+
+  \voiceVerseA
+  \voiceVerseA
+
+  \refrainVerse
 }
 
 % ----------------------------------------
@@ -151,6 +367,56 @@ voicePart = {
 % ----------------------------------------
 
 voiceLyrics = \lyricmode {
+  Ich schlen -- der -- te ge -- mach, ver -- son -- nen aus der Schen -- ken -- tür.
+  Mit Ar -- men vol -- ler Freu -- den -- won -- nen lag die Nacht vor mir.
+  In mei -- nem Mund ein Pfeif -- chen hing, im lin -- ken Arm ein Mägd -- lein ging,
+  in rech -- ter Hand ein Krug voll Bier, so wan -- del -- ten hin -- aus wir vier.
+
+  Doch als ich auf die Stra -- ße trat, voll Froh -- ge -- mut und -sinn,
+  schritt ich in schlam -- mig Stadt -- un -- rat und schlit -- ter -- te da -- hin.
+  Der Un -- ter -- grund ge -- schwind ent -- glitt, im Schwung nahm ich das Mägd -- lein mit,
+  die mir im Schreck und ih -- rem Flug das Pfeif -- chen aus dem Mun -- de schlug.
+
+  Die Welt sie hielt den A -- tem an, die Zeit stand sto -- ckend still
+  und ich er -- sann, was ich noch ret -- ten kann und ret -- ten will.
+
+  Ich stütz -- te mich mit lin -- ker Hand und warf mich hoch em -- por
+  und zog da -- bei nicht grad ga -- lant am Haar das Mägd -- lein vor.
+  Dann trat ich mit dem Fuß die Pfeif, die flog in ei -- nem Fun -- ken -- ref
+  hin -- weg der Magd, die grad nach vorn, wie ich er -- neut den Halt ver -- lor'n.
+  Ich warf mich al -- so auf den Rü -- cken und mit lin -- ker Hand und Knie
+  tat ich sie wuch -- tig von mir drü -- cken, dass sie ritt -- lings fiel und schrie.
+  Grad noch er -- reich -- te denn mein Schuh das Pfeif -- chen und ich trat schnell zu,
+  so sau -- ste sie er -- neut hin -- weg, dem Weib sich nä -- hernd Stra -- ßen -- dreck.
+
+  Die Welt sie hielt den A -- tem an, die Zeit stand sto -- ckend still
+  und ich er -- sann, was ich noch ret -- ten kann und ret -- ten will.
+
+  Ich schwang mein' O -- ber -- leib hi -- nauf und hielt und riss die Magd am Kleid,
+  das hat sie zwar nicht von dem Sturz, doch von dem schnö -- den Kleid be -- freit.
+  Dann wollt' ich, dass mein Mun -- de fing das Pfeif -- chen, das zu Bo -- den ging.
+  So beug -- te ich mein Kreu -- ze krum und fing es zwar doch falsch her -- um.
+
+  Voll Schmerz ge -- peint spie ich die Glut im all -- zu -- wei -- ten Bo -- gen aus
+  und streck -- te mich voll Ü -- ber -- mut mit letz -- ter Kraft in Saus und Braus
+  in Rich -- tung Magd, die leuch -- tend gar, mit mei -- ner Fun -- ken -- glut im Haar
+  trotz all der Müh', die ich mir gab, fiel kla -- tschend in den Stadt -- un -- rat.
+
+  Die Welt sie hielt den A -- tem an, die Zeit stand sto -- ckend still
+  und ich er -- sann, was ich noch ret -- ten kann und ret -- ten will.
+
+  So stand ich denn be -- tre -- ten da, von Schlamm und Matsch be -- netzt.
+  Be -- su -- delt, stin -- kend, mu -- ffig gar, vom Stra -- ßen -- dreck durch -- setzt.
+  Vor ei -- ner Magd, die halb -- nackt war, mich schmo -- rend und ver -- letzt be -- sah
+  und tro -- tzig sich denn ab -- ge -- wandt, ist schluch -- zend sie nach Haus ge -- rannt.
+
+  Auch mein gu -- ter Ta -- bak war in al -- ler Welt ver -- streut.
+  Mein gu -- ter, ed -- ler Ta -- bak den ge -- nie -- ßen wollt' ich heut'.
+  Da -- hin war die er -- hoff -- te Nacht, so hab ich mich denn heim -- ge -- macht
+  und trank frus -- triert in ei -- nem Zug das Bier ich in der Rech -- ten trug.
+
+  Die Welt sie hielt den A -- tem an, die Zeit stand sto -- ckend still
+  und ich er -- sann, was ich noch ret -- ten kann und ret -- ten will.
 }
 
 % ----------------------------------------
@@ -165,7 +431,10 @@ voiceLyrics = \lyricmode {
     \new Staff
     <<
       \global
-      \voicePart
+      \transpose d d'
+      {
+        \voicePart
+      }
       \addlyrics
       {
         \voiceLyrics
@@ -226,7 +495,7 @@ voiceLyrics = \lyricmode {
     \context TabStaff = guitar
     {
       \set Staff.midiInstrument = #"acoustic guitar (nylon)"
-      \transpose d d'
+      \transpose d d
       {
         \guitarPartVoice
       }
@@ -235,7 +504,7 @@ voiceLyrics = \lyricmode {
     \context Staff = thevoice
     {
       \set Staff.midiInstrument = #"bright acoustic"
-      \transpose d d,
+      \transpose d d
       {
         \voicePart
       }
@@ -244,7 +513,7 @@ voiceLyrics = \lyricmode {
 
   \midi
   {
-    \tempo 4 = 200
+    \tempo 8 = 190
   }
 }
 
@@ -260,13 +529,12 @@ voiceLyrics = \lyricmode {
     <<
       \context TabStaff = guitar
       {
-        \set Score.tempoWholesPerMinute = #(ly:make-moment 130 4)
         \set Score.midiMinimumVolume = #0.4
         \set Score.midiMaximumVolume = #0.4
         \set Staff.midiMinimumVolume = #0.8
         \set Staff.midiMaximumVolume = #1.0
         \set Staff.midiInstrument = #"acoustic guitar (nylon)"
-        \transpose d d'
+        \transpose d d
         {
           \guitarPartVoice
         }
@@ -275,7 +543,7 @@ voiceLyrics = \lyricmode {
       \context Staff = thevoice
       {
         \set Staff.midiInstrument = #"bright acoustic"
-        \transpose d d,
+        \transpose d d
         {
           \voicePart
         }
@@ -284,7 +552,7 @@ voiceLyrics = \lyricmode {
 
     \midi
     {
-      \tempo 4 = 200
+      \tempo 8 = 140
     }
   }
 }
@@ -303,7 +571,7 @@ voiceLyrics = \lyricmode {
       \context TabStaff = guitar
       {
         \set Staff.midiInstrument = #"acoustic guitar (nylon)"
-        \transpose d d'
+        \transpose d d
         {
           \guitarPartVoice
         }
@@ -311,13 +579,12 @@ voiceLyrics = \lyricmode {
 
       \context Staff = thevoice
       {
-        \set Score.tempoWholesPerMinute = #(ly:make-moment 130 4)
         \set Score.midiMinimumVolume = #0.4
         \set Score.midiMaximumVolume = #0.4
         \set Staff.midiMinimumVolume = #0.8
         \set Staff.midiMaximumVolume = #1.0
         \set Staff.midiInstrument = #"bright acoustic"
-        \transpose d d,
+        \transpose d d
         {
           \voicePart
         }
@@ -326,7 +593,7 @@ voiceLyrics = \lyricmode {
 
     \midi
     {
-      \tempo 4 = 200
+      \tempo 8 = 140
     }
   }
 }
