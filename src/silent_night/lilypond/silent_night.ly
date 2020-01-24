@@ -141,7 +141,7 @@ guitarPart = {
   <f, f> c f a f c
 
   % takt 24
-  <c'\4 f'\3 a'\2>2.\flageolet\fermata
+  <c'\4 f'\3 a'\2>2.\flageolet\fermata \bar "|."
 }
 
 % ----------------------------------------

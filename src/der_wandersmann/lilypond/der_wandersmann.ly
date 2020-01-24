@@ -288,7 +288,7 @@ guitarPartVoice = {
 
   \guitarRollen
 
-  \guitarWine
+  \guitarWine \bar "|."
 }
 
 % ----------------------------------------
