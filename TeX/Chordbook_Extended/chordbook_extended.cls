@@ -5,7 +5,7 @@
 \LoadClass[12pt,landscape,a4paper,twoside]{article}
 
 \newcommand\myauthor{JoSh}
-\title{Chordbook}
+\title{Extended Chordbook}
 \author{``\myauthor''}
 
 % For smileys
