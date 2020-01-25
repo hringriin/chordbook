@@ -51,8 +51,6 @@
 \setlength{\marginparwidth}{0mm}
 \setlength{\footskip}{10mm}
 
-\setlength{\songnumwidth}{15mm}
-\setlength{\versenumwidth}{10mm}
 
 
 \newcommand\chordbrk{\hspace*{6.2mm}}
@@ -100,3 +98,6 @@
 
 % Lipsum
 \RequirePackage{lipsum}
+
+% color boxes with text and headline
+\RequirePackage{tcolorbox}
