@@ -1,0 +1,51 @@
+\documentclass[12pt,a4paper,landscape,twoside]{article}
+
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\hoffset}{-17.4mm}
+\setlength{\voffset}{-22.4mm}
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{15mm}
+\setlength{\headsep}{5mm}
+\setlength{\textheight}{173mm}
+\setlength{\textwidth}{280mm}
+%\setlength{\headwidth}{\textwidth}
+\setlength{\marginparsep}{10mm}
+\setlength{\marginparwidth}{10mm}
+\setlength{\footskip}{10mm}
+
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhead[OL,ER]{\textbf{Chordbook \the\year}\\}
+\fancyhead[EL,OR]{\textbf{Seite \thepage} \\ \textit{\leftmark}}
+
+\begin{document}
+
+\lipsum[1-10]
+
+Documents for \verb+lilypond-book+ may freely mix music and text.
+For example,
+
+\begin{lilypond}
+\relative c' {
+  c2 e2 \tuplet 3/2 { f8 a b } a2 e4
+}
+\end{lilypond}
+
+Options are put in brackets.
+
+\begin{lilypond}[fragment,quote,staffsize=26,verbatim]
+  c'4 f16
+\end{lilypond}
+
+Larger examples can be put into a separate file, and introduced with
+\verb+\lilypondfile+.
+
+\lilypondfile[quote,noindent]{der_wandersmann.ly}
+
+(If needed, replace @file{screech-and-boink.ly} by any @file{.ly} file
+you put in the same directory as this file.)
+
+\end{document}
