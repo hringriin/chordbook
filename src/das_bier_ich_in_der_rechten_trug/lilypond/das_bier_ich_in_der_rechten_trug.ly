@@ -11,7 +11,7 @@
   title = "Das Bier ich in der Rechten trug"
   composer = \markup { \bold {Music:} Versengold}
   arranger = \markup { \bold {Arrangement:} Joschka Köster}
-  tagline = "Engraved with LilyPond - by Joschka Köster"
+  tagline = #(string-append "Engraved with LilyPond - by Joschka Köster (Build: " (strftime "%d.%m.%Y" (localtime (current-time))) ")" )
 }
 
 #(set-global-staff-size 22)
@@ -155,121 +155,10 @@ vers = {
   \dFigureB
 }
 
-voiceVerseA = {
-  % ich ...
-  r4 r r8 d8
-  % schlenderte gemach
-  fs4 fs8 fs4 fs8
-  % versonnen
-  fs (e) e e fs4
-  % aus der schenken
-  d4 d8 d4 b,8
-  % tür ... mit
-  d4. r4 fs8
-  % armen voller
-  a4 a8 a a4
-  % freuden wonnen
-  b4 a8 fs e4
-  % lag die nacht vor
-  g4 fs8 d4 b,8
-  % mir ... in
-  d4. r4 d8
-  % meinem mund ein
-  fs4 fs8 a4 fs8
-  % peifchen hing im
-  e4 e8 a4 e8
-  % linken arm ein
-  d4 d8 g4 d8
-  % mägdlein ging in
-  b,4 cs8 d4 d8
-  % rechter hand ein
-  fs4 fs8 a4 fs8
-  % krug voll bier so
-  e4 e8 a4 e8
-  % wandelten hin-
-  d4 b,8 cs4 e8
-  % -aus wir vier
-  e (d) cs d4 r8
-}
-
-voiceVerseB = {
-  % ich ...
-  r4 r r8 d8
-  % stützte mich mit
-  fs4 fs8 fs4 fs8
-  % linker Hand und
-  fs (e) e e4 fs8
-  % warf mich hoch em-
-  d4 d8 d4 b,8
-  % -por ... und
-  d4. r4 fs8
-  % zog dabei nicht
-  a4 a8 a4 a8
-  % grad galant am
-  b4 a8 g (fs) fs
-  % Haar das Mägdlein
-  g4 fs8 d4 b,8
-  % vor ... Ich
-  d4. r4 d8
-  % trat mit meinem
-  fs4 fs8 a4 fs8
-  % Fuß die Pfeif die
-  e4 e8 a4 e8
-  % flog in einnem
-  d4 d8 g4 d8
-  % Funkenreif hin
-  b,4 cs8 d4 d8
-  % hinweg der Magd die
-  fs4 fs8 a4 fs8
-  % grad nach vorn wie
-  e4 e8 a4 e8
-  % ich erneut den
-  d4 b,8 cs4 e8
-  % Halt verlor'n
-  e (d) cs d4 r8
-}
-
-voiceVerseC = {
-  % ich ...
-  r4 r r8 d8
-  % warf mich also
-  fs4 fs8 fs4 fs8
-  % auf den rücken
-  fs (e) e e fs4
-  % und mit linker
-  d4 d8 d4 b,8
-  % hand und knie tat
-  d4 e8 d4 fs8
-  % ich sie wuchtig
-  a4 a8 a a4
-  % von mir drücken
-  b4 a8 fs e4
-  % dass sie rittlings
-  g4 fs8 d4 b,8
-  % fiel und schrie grad
-  d4 e8 d4 e8
-  % noch erreichte
-  fs4 fs8 a4 fs8
-  % denn mein schuh das
-  e4 e8 a4 e8
-  % preifchen und ich
-  d4 d8 g4 d8
-  % trat schnell zu so
-  b,4 cs8 d4 d8
-  % sauste sie er-
-  fs4 fs8 a4 fs8
-  % -neut hin weg dem
-  e4 e8 a4 e8
-  % weib sich nähernd
-  d4 b,8 cs4 e8
-  % straßendreck
-  e (d) cs d4 r8
-}
-
 refrainVerse = {
   % die
   r4 r r8 g8
-  % welt sie hielt den 
+  % welt sie hielt den
   b4 b8 b4 b8
   % atem an die
   b8 (a) a a (g) g
@@ -321,7 +210,11 @@ guitarPartVoice = {
   \vers
   \vers
 
-  \refrain \bar "|."
+  \refrain
+
+  \arpeggioArrowUp
+  <d\4 a\3 d'\2 e'\1>8\arpeggio (<d\4 a\3 d'\2 fs'\1>)~8~ 4.
+  \bar "|."
 }
 
 % ----------------------------------------
@@ -340,25 +233,303 @@ voicePart = {
   r2.
   r2.
 
-  \voiceVerseA
-  \voiceVerseA
+  % VERS 1
+
+  % ich ...
+  r4 r r8 d8
+  % schlenderte gemach
+  fs4 fs8 fs4 fs8
+  % versonnen
+  fs (e) e e fs4
+  % aus der schenken
+  d4 d8 d4 b,8
+  % tür ... mit
+  d4. r4 fs8
+  % armen voller
+  a4 a8 a a4
+  % freuden wonnen
+  b4 a8 g fs4
+  % lag die nacht vor
+  g4 fs8 d4 b,8
+  % mir ... in
+  d4. r4 d8
+  % meinem mund ein
+  fs4 fs8 a4 fs8
+  % peifchen hing im
+  e4 e8 a4 e8
+  % linken arm ein
+  d4 d8 g4 d8
+  % mägdlein ging in
+  b,4 cs8 d4 d8
+  % rechter hand ein
+  fs4 fs8 a4 fs8
+  % krug voll bier so
+  e4 e8 a4 e8
+  % wandelten hin-
+  d4 b,8 cs4 e8
+  % -aus wir vier
+  e (d) cs d4 r8
+
+  % doch ...
+  r4 r r8 d8
+  % als ich auf die
+  fs4 fs8 fs4 fs8
+  % Straße trat voll
+  fs (e) e e4 fs8
+  % frohgemut und
+  d4 d8 d4 b,8
+  % -sinn ... schritt
+  d4. r4 r16 fs
+  % ich in schlammig
+  a16 a4~16 a8 a4
+  % stadtunrat und
+  b8 a g (fs4) fs8
+  % schlitterte da-
+  g8 fs8 d4. b,8
+  % -hin ... der
+  d4. r4 d8
+  % untergrund ge-
+  fs4 fs8 a4 fs8
+  % -schwind entglitt im
+  e4 e8 a4 e8
+  % schwung nahm ich das
+  d4 d8 g4 d8
+  % mägdlein mit die
+  b,4 cs8 d4 d8
+  % mir im schreck und
+  fs4 fs8 a4 fs8
+  % ihrem flug das
+  e4 e8 a4 e8
+  % pfeifchen aus dem
+  d4 b,8 cs4 e8
+  % munde schlug
+  e (d) cs d4 r8
 
   \refrainVerse
 
-  \voiceVerseB
-  \voiceVerseC
+  % VERS 2
+
+  % ich ...
+  r4 r r8 d8
+  % stützte mich mit
+  fs4 fs8 fs4 fs8
+  % linker Hand und
+  fs (e) e e4 fs8
+  % warf mich hoch em-
+  d4 d8 d4 b,8
+  % -por ... und
+  d4. r4 fs8
+  % zog dabei nicht
+  a4 a8 a4 a8
+  % grad galant am
+  b4 a8 g (fs) fs
+  % Haar das Mägdlein
+  g4 fs8 d4 b,8
+  % vor ... Ich
+  d4. r4 d8
+  % trat mit meinem
+  fs4 fs8 a4 fs8
+  % Fuß die Pfeif die
+  e4 e8 a4 e8
+  % flog in einnem
+  d4 d8 g4 d8
+  % Funkenreif hin
+  b,4 cs8 d4 d8
+  % hinweg der Magd die
+  fs4 fs8 a4 fs8
+  % grad nach vorn wie
+  e4 e8 a4 e8
+  % ich erneut den
+  d4 b,8 cs4 e8
+  % Halt verlor'n
+  e (d) cs d4 r8
+
+  % ich ...
+  r4 r r8 d8
+  % warf mich also
+  fs4 fs8 fs4 fs8
+  % auf den rücken
+  fs (e) e e fs4
+  % und mit linker
+  d4 d8 d4 b,8
+  % hand und knie tat
+  d4 e8 d4 fs8
+  % ich sie wuchtig
+  a4 a8 a4 a8
+  % von mir drücken
+  b4 a8 g fs4
+  % dass sie rittlings
+  g4 fs8 d4 b,8
+  % fiel und schrie grad
+  d4 e8 d4 e8
+  % noch erreichte
+  fs4 fs8 a4 fs8
+  % denn mein schuh das
+  e4 e8 a4 e8
+  % preifchen und ich
+  d4 d8 g4 d8
+  % trat schnell zu so
+  b,4 cs8 d4 d8
+  % sauste sie er-
+  fs4 fs8 a4 fs8
+  % -neut hin weg dem
+  e4 e8 a4 e8
+  % weib sich nähernd
+  d4 b,8 cs4 e8
+  % straßendreck
+  e (d) cs d4 r8
 
   \refrainVerse
 
-  \voiceVerseC
-  \voiceVerseC
+  % VERS 3
+
+  % ich ...
+  r4 r r8 d8
+  % schwang mein ober-
+  fs4 fs8 fs4 fs8
+  % leib hinauf und
+  fs (e) e e4 fs8
+  % hielt und riss die
+  d4 d8 d4 b,8
+  % magd am kleid das
+  d4 e8 d4 fs8
+  % hat sie zwar nicht
+  a4 a8 a4 a8
+  % von dem sturz doch
+  b4 a8 e4 fs8
+  % von dem schnöden
+  g4 fs8 d4 b,8
+  % kleid befreit dann
+  d4 e8 d4 e8
+  % wollt ich dass mein
+  fs4 fs8 a4 fs8
+  % munde fing das
+  e4 e8 a4 e8
+  % pfeifchen das zu
+  d4 d8 g4 d8
+  % boden ging so
+  b,4 cs8 d4 d8
+  % beugte ich mein
+  fs4 fs8 a4 fs8
+  % kreuze krum und
+  e4 e8 a4 e8
+  % fing es zwar doch
+  d16 b,8 d4.. e8
+  % falsch herum
+  e (d) cs d4 r8
+
+  % voll ...
+  r4 r r8 d8
+  % schmerz gepeint spie
+  fs4 fs8 fs4 fs8
+  % ich die glut im
+  fs4 e8 e4 fs8
+  % allzuweiten
+  d4 d8 d4 b,8
+  % bogen aus und
+  d4 e8 d4 fs8
+  % streckte mich voll
+  a4 a8 a4 a8
+  % übermut mit
+  b4 a8 e4 fs8
+  % letzter kraft in
+  g4 fs8 d4 b,8
+  % saus und braus in
+  d4 e8 d4 e8
+  % richtung magd die
+  fs4 fs8 a4 fs8
+  % leuchtend gar mit
+  e4 e8 a4 cs'8
+  % meiner funken-
+  d'4 cs'8 b (a) a
+  % -glut im haar trotz
+  b4 a8 a4 e8
+  % all der müh' die
+  fs4 fs8 a4 fs8
+  % ich mir gab fiel
+  e4 e8 a4 e8
+  % klatschend in den
+  d8 b,4 r8 cs8 e8
+  % stadtunrat
+  e16 d8 d4.. r8
 
   \refrainVerse
 
-  \voiceVerseA
-  \voiceVerseA
+  % VERS 4
+
+  % so ...
+  r4 r r8 d8
+  % stand ich denn be-
+  fs4 fs8 fs4 fs8
+  % -treten da von schlamm
+  fs4 e8 e4 fs8
+  % und matsch be-
+  d4 d8 d4 b,8
+  % -netzt be-
+  d4. r4 fs8
+  % -sudelt sinkend
+  a8 a4 a4 a8
+  % muffig gar vom
+  b8 a8 g8 (fs4) fs8
+  % straßendreck durch-
+  g4 fs8 d4 b,8
+  % -setzt vor
+  d4 r4. e8
+  % einer magd die
+  fs4 fs8 a4 fs8
+  % halbnackt war mich
+  e4 e8 a4 e8
+  % schmorend und ver-
+  d4 d8 g4 d8
+  % -letzt besah und
+  b,4 cs8 d4 e8
+  % trotzig sich denn
+  fs4 fs8 a4 fs8
+  % abgewandt ist
+  e4 e8 a4 e8
+  % schluchzend sie nach
+  d4 b,8 cs4 e8
+  % haus gerannt
+  e (d) cs d4 r8
+
+  r4. r4.
+  % auch mein guter
+  fs4 fs8 fs4 fs8
+  % tabak war in
+  fs8 e e4. fs8
+  % aller welt ver-
+  d16 d8 d4.. b,8
+  % -streut mein
+  d4. r4 fs8
+  % guter edler
+  a4 a8 a4 a8
+  % tabak den ge-
+  b8 a g (fs4) fs8
+  % -nießen wollt ich
+  g4 fs8 d4 b,8
+  % heut da-
+  d4. r4 e8
+  % -hin war die er-
+  fs4 fs8 a4 fs8
+  % -hoffte nacht so
+  e4 e8 a4 e8
+  % hab ich mich denn
+  d4 d8 g4 d8
+  % heim gemacht und
+  b,4 cs8 d4 d8
+  % trank frustriert in
+  fs4 fs8 a4 fs8
+  % einem zug das
+  e4 e8 a4 e8
+  % bier ich in der
+  d4 b,8 cs4 e8
+  % rechten trug
+  e (d) cs d4 r8
 
   \refrainVerse
+
+  r4. r4.
+  r4. r4.
 }
 
 % ----------------------------------------
@@ -382,7 +553,7 @@ voiceLyrics = \lyricmode {
 
   Ich stütz -- te mich mit lin -- ker Hand und warf mich hoch em -- por
   und zog da -- bei nicht grad ga -- lant am Haar das Mägd -- lein vor.
-  Dann trat ich mit dem Fuß die Pfeif, die flog in ei -- nem Fun -- ken -- ref
+  Dann trat ich mit dem Fuß die Pfeif, die flog in ei -- nem Fun -- ken -- reif
   hin -- weg der Magd, die grad nach vorn, wie ich er -- neut den Halt ver -- lor'n.
   Ich warf mich al -- so auf den Rü -- cken und mit lin -- ker Hand und Knie
   tat ich sie wuch -- tig von mir drü -- cken, dass sie ritt -- lings fiel und schrie.
@@ -479,7 +650,7 @@ voiceLyrics = \lyricmode {
     % disable string numbers if manually specify string, e.g. e\6 (open low e
     % string)
     \omit Voice.StringNumber
-    \override LyricSpace.minimum-distance = #2.0
+    \override LyricSpace.minimum-distance = #3.0
   }
 }
 
