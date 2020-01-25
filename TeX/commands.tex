@@ -16,3 +16,7 @@
 % landscape
 \songcolumns{2}
 \columnsep=3mm
+
+% change rightmark to display the song title. this does not work for each first
+% song in a new song section, though
+\renewcommand{\chorusmark}{\markright{\thesongnum{} \songtitle}}
