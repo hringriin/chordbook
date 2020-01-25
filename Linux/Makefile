@@ -81,6 +81,17 @@ help:
 	@printf "'make lilypond' will create a folder called 'PUBLISH' in the root directory of this repository and within this folder a folder called 'REHEARSAL'. All the PDFs and MIDI files of each song are stored in this folder.\n"
 	@printf "'make music' will need and use these documents to create the Extended Chordbook.\n"
 
+publish: ../PUBLISH/Chordbook.tar.gz ../PUBLISH/Chordbook.zip
+
+../PUBLISH/Chordbook.tar.gz: ../PUBLISH/REHEARSAL/*/*.midi
+	@cp $(FILENAME).pdf $(FILENAMEEXTENDED).pdf ../PUBLISH/
+	@cd ../PUBLISH && tar -zcvf Chordbook.tar.gz $(FILENAME).pdf $(FILENAMEEXTENDED).pdf REHEARSAL
+	@cd ../PUBLISH && zip -r Chordbook.zip $(FILENAME).pdf $(FILENAMEEXTENDED).pdf REHEARSAL
+
+../PUBLISH/Chordbook.zip: ../PUBLISH/REHEARSAL/*/*.midi
+	@cd ../PUBLISH && zip -r Chordbook.zip $(FILENAME).pdf $(FILENAMEEXTENDED).pdf REHEARSAL
+
+
 clean:
 	@printf "\n*** \033[0;32mCleaning up ...\033[0m\n\n"
 	@-rm -v *.aux;
