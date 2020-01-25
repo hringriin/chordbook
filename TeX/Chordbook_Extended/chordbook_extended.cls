@@ -20,6 +20,7 @@
 
 %\newcommand\incls[1]{\input{input/{#1}} \sclearpage}
 
+\RequirePackage{caption}
 
 % Sprachpaket
 \RequirePackage[ngerman]{babel}
