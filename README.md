@@ -20,62 +20,18 @@ erweitern.  Seine Beiträge sind gekennzeichnet oder werden noch gekennzeichnet
 werden.
 
 
-## Using this repository
+## Using this repository and obtaining the Chordbook(s)
 
-Please note that I *do not support* compiling this document on Windows or Mac
-OS any further, at least for now, due to version changes of the `songs.sty`
-which seem to cause errors in my project but not in the default or example
-documents.
-
-
-### Prerequisites (Linux)
-
-You need `Texlive` and `Perl` installed Check your distributions package
-manager on how to do so.
-
-On `Arch Linux` install every `texlive`-package with `pacman -S $(pacman -Ssq
-texlive)`
-
-`Ubuntu` users can do so by typing `apt install texlive*`.
-
-**Please note that this is not the most elegant way no how to install TeXlive,
-but it makes sure, that every package needed by this project is installed.**
-
-
-### Compile
-
-To compile simply type `make` after a directory change into `Chordbook/Unix`
-
-
-#### Extended Version
-
-If you have `lilypond` installed, you can also type `make lilypond` to compile
-all lilypond files at once. ~~If you type `make extended` you will compile the
-*normal* Chordbook **and** an extended version with all lilypond files and
-notations and all the stuff I gathered around each song as well.~~
-
-**Please note that compiling the lilypond files at once may take a long time.**
-
-**Please note that the extended Chordbook version is in a pre-alpha state and
-not meant to be working properly to this time.**
-
-
-## Getting the Chordbook
-
-~~There is a monthly updated version on my homepage, for people who do not want
-to compile it by themselves.  You can download it [here][cbdlpage].~~
-
-Download your favourite version of the Chordbook in the
-[Releases-Section][releases] of this repository.
+Have a look at the [wiki][wiki] of this repository.
 
 
 ## Misc
 
 I'd love to know about your opinion about this "book".
-I'd appreciate every kind of help!
+I'd appreciate any kind of help!
 
-For bugs or everything regarding the content, please write an issue or do a
-pull request.
+For bugs or everything regarding the content, please write an informal issue or
+do an informal pull request.
 
 You can always [write an E-Mail][mailme] for any kind of information regarding
 this repository.
@@ -89,3 +45,4 @@ this repository.
 [perldllink]: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/dwimperl/dwimperl-5.14.2.1-v7-32bit.exe "Perl for Windows"
 [cbdlpage]: https://chordbook.barzh.eu "Downloadpage Chordbook"
 [releases]: https://github.com/hringriin/chordbook/releases "Chordbook Releases"
+[wiki]: https://github.com/hringriin/chordbook/wiki "Chordbook: Wiki"
