@@ -724,7 +724,6 @@ voiceLyrics = \lyricmode {
     <<
       \context TabStaff = guitar
       {
-        \set Score.tempoWholesPerMinute = #(ly:make-moment 130 4)
         \set Score.midiMinimumVolume = #0.4
         \set Score.midiMaximumVolume = #0.4
         \set Staff.midiMinimumVolume = #0.8
@@ -748,7 +747,7 @@ voiceLyrics = \lyricmode {
 
     \midi
     {
-      \tempo 4 = 200
+      \tempo 4 = 130
     }
   }
 }
@@ -775,7 +774,6 @@ voiceLyrics = \lyricmode {
 
       \context Staff = thevoice
       {
-        \set Score.tempoWholesPerMinute = #(ly:make-moment 130 4)
         \set Score.midiMinimumVolume = #0.4
         \set Score.midiMaximumVolume = #0.4
         \set Staff.midiMinimumVolume = #0.8
@@ -790,7 +788,7 @@ voiceLyrics = \lyricmode {
 
     \midi
     {
-      \tempo 4 = 200
+      \tempo 4 = 130
     }
   }
 }
