@@ -184,7 +184,7 @@ guitarPartVoice = {
   \alternative {
     { <d,\5 fs,\4 a,\3 d\2>2 \deadNotesOn <d,\5 fs,\4 a,\3 d\2>2 \deadNotesOff }
     { <d,\5 fs,\4 a,\3 d\2>2 \deadNotesOn <d,\5 fs,\4 a,\3 d\2>2 \deadNotesOff }
-  }
+  } \bar "||" \break
 
   % takt 9
   % es ist geleert
@@ -210,7 +210,7 @@ guitarPartVoice = {
   \gFigureC
   \cFigureA
 
-  \verseEnd
+  \verseEnd \bar "||" \break
 
   % der alte
   \cFigureB
@@ -222,7 +222,7 @@ guitarPartVoice = {
   \gFigureC
   \cFigureA
 
-  \verseEnd
+  \verseEnd \bar "||" \break
 
   % takt 9
   % es ist geleert
@@ -248,7 +248,7 @@ guitarPartVoice = {
   \gFigureC
   \cFigureA
 
-  \verseEnd
+  \verseEnd \bar "||" \break
 
   % der alte
   \cFigureB
@@ -260,7 +260,7 @@ guitarPartVoice = {
   \gFigureC
   \cFigureA
 
-  \verseEnd
+  \verseEnd \bar "||" \break
 
   % takt 9
   % es ist geleert
@@ -284,9 +284,9 @@ guitarPartVoice = {
   \dFigureA
   \cFigureB
   \gFigureC
-  \cFigureA
+  \cFigureA \bar "||" \break
 
-  \guitarRollen
+  \guitarRollen \bar "||" \break
 
   \guitarWine \bar "|."
 }
