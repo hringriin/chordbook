@@ -10,7 +10,7 @@
   title = "Der Wandersmann"
   composer = \markup { \bold {Music:} Schandmaul}
   arranger = \markup { \bold {Arrangement:} Joschka Köster}
-  tagline = "Engraved with Lilypond - by Joschka Köster"
+  tagline = #(string-append "Engraved with LilyPond - by Joschka Köster (Build: " (strftime "%d.%m.%Y" (localtime (current-time))) ")" )
 }
 
 #(set-global-staff-size 22)
