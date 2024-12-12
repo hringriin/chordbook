@@ -1,6 +1,6 @@
 % vim: ft=lilypond:
 
-\version "2.18.2"
+\version "2.24.4"
 
 \layout {
 }
