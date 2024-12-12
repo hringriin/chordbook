@@ -1,5 +1,5 @@
 # the dir where the lilypond files are located
-FILENAME=davy_jones_theme
+FILENAME=davy-jones-dead-mans-chest
 REHEARSAL=../../../PUBLISH/REHEARSAL
 ccred=$(echo -e "\033[0;31m")
 ccyellow=$(echo -e "\033[0;33m")
