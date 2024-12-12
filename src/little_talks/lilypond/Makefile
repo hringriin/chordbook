@@ -7,8 +7,7 @@ ccgreen=$(echo -e "\033[0;32m")
 ccend=$(echo -e "\033[0m")
 
 
-CPU_CORES=`cat /proc/cpuinfo | grep -m1 "cpu cores" | sed s/".*: "//`
-LILYPARAM := -ddelete-intermediate-files -dno-point-and-click -djob-count=$(CPU_CORES) -o $(FILENAME)_ly
+LILYPARAM := -ddelete-intermediate-files -dno-point-and-click -o $(FILENAME)_ly
 
 .PHONY: clean
 
