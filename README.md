@@ -13,7 +13,7 @@ sie von anderen Menschen übernommen und mit der Zeit selbst abgewandelt, z.T.
 habe ich sie mir selber durch Hören oder Video-Material abkupfern können.
 
 Sollte es Einwände gegen ein oder mehrere Lieder oder Texte geben, bin ich über
-meine E-Mail Adresse `hringriin@gmail.com` erreichbar.
+meine E-Mail Adresse [`chordbook@barzh.de`][mailme] erreichbar.
 
 Dank **Fagus vom Friedrichshain** konnte ich mein Chordbook um einige Stücke
 erweitern.  Seine Beiträge sind gekennzeichnet oder werden noch gekennzeichnet
@@ -39,7 +39,7 @@ this repository.
 
 
 [songspkg]: http://songs.sourceforge.net/index.html "Songs Package"
-[mailme]: mailto:hringriin@gmail.com "Mail Me"
+[mailme]: mailto:chordbook@barzh.de "Mail Me"
 [mactex]: https://tug.org/mactex/ "MacTex-2015"
 [miktexdlpage]: https://miktex.org/download "MikTex Download"
 [perldllink]: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/dwimperl/dwimperl-5.14.2.1-v7-32bit.exe "Perl for Windows"
