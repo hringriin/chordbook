@@ -85,6 +85,46 @@ guitarPartVoice = {
 
 % ----------------------------------------
 % guitarPart Voice }}}
+% voicePart {{{
+% ----------------------------------------
+
+voicePart = {
+  r4 r1 r2 r4
+
+  % Should ...
+  a\4 
+
+  % all ...
+  d'4. cs'8 d'4 fs'
+
+  % be forgot ...
+  e'4. d'8 e'4 fs'8 e'
+
+  % never brought to
+  d'4. d'8 fs'4 a'
+
+  % mind ... should ...
+  b'2. b'8 a'
+
+  % all acquaintance ...
+  a'4. fs'8 fs' e' d'4
+
+  % be forgot ...
+  e'4. d'8 e'4 fs'8 e'
+
+  % days ...
+  d'4. b8 b4 a
+
+  % Syne ...
+  d'2 r4 b'8 a'
+
+
+  % For Auld ...
+  
+}
+
+% ----------------------------------------
+% voicePart }}}
 % lyrics {{{
 % ----------------------------------------
 
@@ -124,6 +164,16 @@ voiceLyrics = \lyricmode {
 \score
 {
   <<
+    \new Staff
+    <<
+      \global
+      \voicePart
+      \addlyrics
+      {
+        \voiceLyrics
+      }
+    >>
+
     \new Staff
     <<
       \global
@@ -180,6 +230,15 @@ voiceLyrics = \lyricmode {
         \guitarPartVoice
       }
     }
+
+    \context Staff = thevoice
+    {
+      \set Staff.midiInstrument = #"bright acoustic"
+      \transpose d d,
+      {
+        \voicePart
+      }
+    }
   >>
 
   \midi
@@ -187,6 +246,89 @@ voiceLyrics = \lyricmode {
     \tempo 4 = 72
   }
 }
+
+% rehearsal guitar {{{
+% ----------------------------------------
+
+\book {
+  \bookOutputSuffix "guitar"
+  \score
+  {
+    \unfoldRepeats
+    <<
+      \context TabStaff = guitar
+      {
+        \set Score.midiMinimumVolume = #0.4
+        \set Score.midiMaximumVolume = #0.4
+        \set Staff.midiMinimumVolume = #0.8
+        \set Staff.midiMaximumVolume = #1.0
+        \set Staff.midiInstrument = #"acoustic guitar (nylon)"
+        \transpose bf d'
+        {
+          \guitarPartVoice
+        }
+      }
+
+      \context Staff = thevoice
+      {
+        \set Staff.midiInstrument = #"bright acoustic"
+        \transpose d d,
+        {
+          \voicePart
+        }
+      }
+    >>
+
+    \midi
+    {
+      \tempo 4 = 72
+    }
+  }
+}
+
+% ----------------------------------------
+% rehearsal guitar }}}
+% rehearsal voice {{{
+% ----------------------------------------
+
+\book {
+  \bookOutputSuffix "voice"
+  \score
+  {
+    \unfoldRepeats
+    <<
+      \context TabStaff = guitar
+      {
+        \set Staff.midiInstrument = #"acoustic guitar (nylon)"
+        \transpose bf d'
+        {
+          \guitarPartVoice
+        }
+      }
+
+      \context Staff = thevoice
+      {
+        \set Score.midiMinimumVolume = #0.4
+        \set Score.midiMaximumVolume = #0.4
+        \set Staff.midiMinimumVolume = #0.8
+        \set Staff.midiMaximumVolume = #1.0
+        \set Staff.midiInstrument = #"bright acoustic"
+        \transpose d d,
+        {
+          \voicePart
+        }
+      }
+    >>
+
+    \midi
+    {
+      \tempo 4 = 72
+    }
+  }
+}
+
+% ----------------------------------------
+% rehearsal Voice }}}
 
 % ----------------------------------------
 % midi }}}
