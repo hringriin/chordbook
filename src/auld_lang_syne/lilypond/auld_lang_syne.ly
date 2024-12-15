@@ -12,8 +12,8 @@
 
 \header {
   title = "Auld Lang Syne"
-  composer = \markup { \bold {Music:} "Scottish Traditional " }
-  arranger = \markup { \bold {Arrangement:} "Unknown" }
+  composer = \markup { \bold {Music:} "Scottish Traditional" }
+  arranger = \markup { \bold {Arrangement:} "Joschka Köster" }
   instrument = "Guitar"
   tagline = #(string-append "Engraved with LilyPond - by Joschka Köster (Build: " (strftime "%d.%m.%Y" (localtime (current-time))) ")" )
 }
