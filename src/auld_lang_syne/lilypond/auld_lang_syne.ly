@@ -85,6 +85,39 @@ guitarPartVoice = {
 
 % ----------------------------------------
 % guitarPart Voice }}}
+% lyrics {{{
+% ----------------------------------------
+
+voiceLyrics = \lyricmode {
+  Should Auld A -- cquain -- tance be for -- got
+  A -- nd ne -- ver brought to mind
+  Shou -- ld Auld A -- cquai -- n -- tance be for -- got
+  A -- nd days of Auld Lang Syne.
+
+  F -- or Auld La -- -- ng Syne my dear
+  F -- or Auld La -- ng Syne
+  We'll take a cup of kind -- ness yet
+  F -- or Auld La -- ng Syne.
+
+  And here's a hand my tru -- sty friend
+  Tha -- t gives a hand to thine
+  We'll take a cup of kind -- ness yet
+  F -- or Auld La -- ng Syne
+
+  F -- or Auld La -- -- ng Syne my dear
+  F -- or Auld La -- ng Syne
+  We'll take a cup of kind -- ness yet
+  F -- or Auld La -- ng Syne.
+
+  Should Auld A -- cquain -- tance be for -- got
+  A -- nd ne -- ver brought to mind
+  Shou -- ld Auld A -- cquain -- tance be for --got
+  A -- nd days of Auld Lang Syne.
+}
+
+% ----------------------------------------
+% lyrics }}}
+
 % pdf {{{
 % ----------------------------------------
 
