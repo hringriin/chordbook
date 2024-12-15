@@ -70,17 +70,86 @@ guitarPartVoice = {
   \set fingeringOrientations = #'(up)
   \mark "Capo 4"
 
-  % takt 1
-  \partial 4 f4\3 |
+  % intro {{{
+  % ----------------------------------------
+
+  \sectionLabel "Intro"
+  % be forgot ...
+  \partial 4 d'8\1 c'\2 |
+
+  % days of ...
+  <g,\5 d\4 g\3 bf\2>\arpeggio d\4 g\3 d\4 <ef,\6 g\3> ef\4 <f,\6 f\3> c\4 |
+
+  % Syne ...                                   ... Should ...
+  <bf,\5 ef\4 f\3 bf\2> ef\4 f\3 bf\2 <bf,\5 d\4>4 f4\3 | \break
+
+  % ----------------------------------------
+  % intro }}}
+  % verse 1 {{{
+  % ----------------------------------------
+
+  \sectionLabel "Verse"
+  % Should ...
+  %4 f4\3 |
+
+  % Auld aquaintance ...
   <bf\2 bf,\5>8 d\4 f\3 a\2 <bf\2 g,\5> d\4 d'\1 f\3 |
+
+  % be forgot ...
   <f,\6 c'\2> c\4 f\3 bf\2 <a,\5 c'\2> f\3 d'\1 c'\2 |
+
+  % Never brought to ...
   \arpeggioArrowUp
   <bf\2 f\3 d\4 bf,\5>\arpeggio d\4 <bf\2 f\3> d\4 <bf,\5 f\3 bf\2 d'\1>\arpeggio f\3 <bf\2 f'\1> f\3 |
+
+  % mind ...
   <ef\4 bf\3 d'\2 g'\1>\arpeggio bf\3 d'\2 g'\1 ef\4 a\3 g'\1 \glissando f'\1 |
+
+  % Should Auld ...
   <bf,\5 f\3 bf\2 f'\1>\arpeggio f\3 bf\2 d'\1 <g,\5 d'\1> d\4 bf\2 g\3 |
+
+  % be forgot ...
   <f,\6 c'\2> c\4 f\3 bf\2 <a,\5 c'\2> f\3 d'\1 c'\2 |
+
+  % days of ...
   <g,\5 d\4 g\3 bf\2>\arpeggio d\4 g\3 d\4 <ef,\6 g\3> ef\4 <f,\6 f\3> c\4 |
-  <bf,\5 ef\4 f\3 bf\2> ef\4 f\3 bf\2 <bf,\5 d\4>2 |
+
+  % Syne ...
+  <bf,\5 ef\4 f\3 bf\2> ef\4 f\3 bf\2 <bf,\5 d\4>4 g'8\1 \glissando f'\1 |
+
+  \break
+
+  % ----------------------------------------
+  % verse 1 }}}
+  % chorus 1 {{{
+  % ----------------------------------------
+
+  \section
+  \sectionLabel "Chorus"
+  % For Auld ...
+  <bf,\5 f\3 bf\2 f'\1>\arpeggio f\3 bf\2 d'\1 <g,\5 d'\1> d\4 bf\2 g\3 |
+
+  % Syne my dear ...
+  <f,\6 c'\2> c\4 f\3 bf\2 <a,\5 c'\2> f\3 g'\1 \glissando f'\1 |
+
+  % Auld lang ...
+  <bf\2 f\3 d\4 bf,\5>\arpeggio d\4 <bf\2 f\3> d\4 <bf,\5 f\3 bf\2 d'\1>\arpeggio f\3 <bf\2 f'\1> f\3 |
+
+  % Syne ...
+  <ef\4 bf\3 d'\2 g'\1>\arpeggio bf\3 d'\2 g'\1 ef\4 a\3 g'\1 \glissando f'\1 |
+
+  % take a cup ...
+  <bf,\5 f\3 bf\2 f'\1>\arpeggio f\3 bf\2 d'\1 <g,\5 d'\1> d\4 bf\2 g\3 |
+
+  % kindness ...
+
+  % days of ...
+
+  % Syne ...
+
+  % ----------------------------------------
+  % chorus 1 }}}
+
 }
 
 % ----------------------------------------
